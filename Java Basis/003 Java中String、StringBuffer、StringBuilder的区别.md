@@ -11,15 +11,19 @@ GitHub：[https://github.com/nnngu](https://github.com/nnngu)
 
 　　String类中使用字符数组保存字符串，因为有“final”修饰符，所以String对象是不可变的。
 
-<pre>    /** The value is used for character storage. */
-    private final char value[];</pre>
+```
+/** The value is used for character storage. */
+    private final char value[];
+``` 
 
 　　**StringBuffer和StringBuilder**都继承自AbstractStringBuilder类，在AbstractStringBuilder中也是使用字符数组保存字符串，但没有“final”修饰符，所以两种对象都是可变的。
 
-<pre>    /**
+```
+/**
      * The value is used for character storage.
      */
-    char[] value;</pre>
+    char[] value;
+```
 
 ## 2.是否多线程安全
 
@@ -29,18 +33,22 @@ GitHub：[https://github.com/nnngu](https://github.com/nnngu)
 
 　　StringBuffer对方法加了同步锁(synchronized) ，所以是**线程安全的**。看如下源码：
 
-<pre>1     public synchronized StringBuffer append(String str) {
+```
+1     public synchronized StringBuffer append(String str) {
 2         toStringCache = null;
 3         super.append(str);
 4         return this;
-5     }</pre>
+5     }
+```
 
 　　StringBuilder并没有对方法进行加同步锁，所以是**非线程安全的**。如下源码：
 
-<pre>1     public StringBuilder append(String str) {
+```
+1     public StringBuilder append(String str) {
 2         super.append(str);
 3         return this;
-4     }</pre>
+4     }
+```
 
 ## 3.StringBuffer和StringBuilder的共同点
 
