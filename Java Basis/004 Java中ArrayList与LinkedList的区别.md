@@ -9,7 +9,8 @@ GitHub：[https://github.com/nnngu](https://github.com/nnngu)
 
 **一般大家都知道ArrayList和LinkedList的区别：**
 
-      1、ArrayList的实现是基于数组，LinkedList的实现是基于双向链表。 
+      1、ArrayList的实现是基于数组，LinkedList的实现是基于双向链表。
+	  
       2、对于随机访问，ArrayList优于LinkedList
 
       3、对于插入和删除操作，LinkedList优于ArrayList
