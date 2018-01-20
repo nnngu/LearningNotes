@@ -1,1 +1,67 @@
+# 如何用java语言实现C#中的ref关键字(按引用传递参数)的效果
+
+作者：[nnngu](https://github.com/nnngu)  
+GitHub：[https://github.com/nnngu](https://github.com/nnngu)  
+博客园：[http://www.cnblogs.com/nnngu](http://www.cnblogs.com/nnngu/)  
+简书：[https://www.jianshu.com/users/1df20d76ea5c](https://www.jianshu.com/users/1df20d76ea5c)  
+知乎：[https://www.zhihu.com/people/nnngu/posts](https://www.zhihu.com/people/nnngu/posts)  
+
+---
+
+在上一篇文章中（[Java的参数传递是值传递还是引用传递](http://www.cnblogs.com/nnngu/p/8299724.html)），主要分析了java语言的参数传递只有按值传递而没有按引用传递。
+
+先看一下微软的C#文档对按引用传递的定义（如下截图）：<https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/ref#passing-an-argument-by-reference>
+
+![](http://images2017.cnblogs.com/blog/1313428/201801/1313428-20180117014522146-1759928283.png)
+
+**那么java语言如何实现C#中ref关键字(按引用传递参数)的效果呢？**
+
+## 思路
+
+我们可以把需要传递的参数再封装一层，即定义一个新的类，使得需要传递的参数成为新类的成员变量，传递参数时就传递这个新类的实例。以此达到ref关键字的效果。
+
+## 代码演示
+
+RefDemo.java
+
+<pre>public class RefDemo {
+    public static void main(String[] args) {
+        Person person1 = new Person();
+        PersonPack personPack = new PersonPack();
+        personPack.person = person1;
+
+        // 打印person
+        System.out.println(personPack.person);
+
+        change(personPack);
+
+        // 再打印person
+        System.out.println(personPack.person);
+    }
+
+    public static void change(PersonPack personPack) {
+        Person person2 = new Person();
+        personPack.person = person2;
+    }
+}
+
+/**
+ * Person类
+ */
+class Person {
+
+}
+
+/**
+ * 包装类：PersonPack
+ */
+class PersonPack {
+    public Person person;
+}</pre>
+
+运行结果：
+
+![](http://images2017.cnblogs.com/blog/1313428/201801/1313428-20180117022528928-253087335.png)
+
+可以看出两次打印person的地址值不一样，即调用完change() 方法之后，person引用(指向) 了另一个对象！
 
