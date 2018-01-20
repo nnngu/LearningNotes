@@ -12,7 +12,7 @@ GitHub：[https://github.com/nnngu](https://github.com/nnngu)
 
 先看一下微软的C#文档对按引用传递的定义（如下截图）：<https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/ref#passing-an-argument-by-reference>
 
-![](http://images2017.cnblogs.com/blog/1313428/201801/1313428-20180117014522146-1759928283.png)
+![][1]
 
 **那么java语言如何实现C#中ref关键字(按引用传递参数)的效果呢？**
 
@@ -61,7 +61,10 @@ class PersonPack {
 
 运行结果：
 
-![](http://images2017.cnblogs.com/blog/1313428/201801/1313428-20180117022528928-253087335.png)
+![][2]
 
 可以看出两次打印person的地址值不一样，即调用完change() 方法之后，person引用(指向) 了另一个对象！
 
+
+  [1]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/21/1516472077285.jpg
+  [2]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/21/1516472129252.jpg
