@@ -1,5 +1,5 @@
 # JAVA有哪些数据类型？基本数据类型各占多少个字节
-作者：[nnngu](https://github.com/nnngu)
+作者：[nnngu](https://github.com/nnngu)  
 转载本文请注明出处：[http://www.cnblogs.com/nnngu](http://www.cnblogs.com/nnngu/)
 
 ---
