@@ -11,9 +11,11 @@ GitHub：[https://github.com/nnngu](https://github.com/nnngu)
 
 ## **Java对String类的定义：**
 
-<pre>public final class String implements java.io.Serializable, Comparable<String>, CharSequence {
+```
+public final class String implements java.io.Serializable, Comparable<String>, CharSequence {
     // 省略...　
-}</pre>
+}
+```
 
 ## final修饰符的用法：
 
@@ -21,7 +23,7 @@ GitHub：[https://github.com/nnngu](https://github.com/nnngu)
 
 　　当用final修饰一个类时，表明这个类不能被继承。final类中的成员变量可以根据需要设为final，但是要注意final类中的所有成员方法都会被隐式地指定为final方法。
 
-![](http://images2017.cnblogs.com/blog/1313428/201801/1313428-20180107205011799-1177613683.png)
+![][1]
 
 2.修饰方法
 
@@ -39,7 +41,8 @@ GitHub：[https://github.com/nnngu](https://github.com/nnngu)
 
 很多时候会容易把static和final关键字混淆，static作用于成员变量用来表示只保存一份副本，而final的作用是用来保证变量不可变。看下面这个例子：
 
-<pre> 1 public class Demo1 {
+```
+ 1 public class Demo1 {
  2     public static void main(String[] args)  {
  3         MyClass myClass1 = new MyClass();
  4         MyClass myClass2 = new MyClass();
@@ -54,13 +57,19 @@ GitHub：[https://github.com/nnngu](https://github.com/nnngu)
 13 class MyClass {
 14     public final double i = Math.random();
 15     public static double j = Math.random();
-16 }</pre>
+16 }
+```
 
  运行结果：
 
-<pre>0.3222977275463088
+```
+0.3222977275463088
 0.2565532218939688
 0.36856868882926397
-0.36856868882926397</pre>
+0.36856868882926397
+```
 
 每次打印的两个j值都是一样的，而i的值却是不同的。从这里就可以知道final和static变量的区别了。
+
+
+  [1]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/21/1516470278278.jpg
