@@ -44,7 +44,7 @@ public synchronized V remove(Object key) {
 
 ConcurrentHashMap的数据结构如下：
 
-![](http://images2017.cnblogs.com/blog/1313428/201801/1313428-20180108044957707-1330615725.png)
+![][1]
 
 可以看出，相对 HashMap 和 Hashtable， ConcurrentHashMap 增加了Segment 层，每个Segment 原理上等同于一个 Hashtable， ConcurrentHashMap 等同于一个 Segment 的数组。下面是 ConcurrentHashMap 的 put 和 get 方法：
 
@@ -66,3 +66,5 @@ public V get(Object key) {
 
 向 ConcurrentHashMap 中插入数据(put) 或者 读取数据(get)，首先都要将相应的 Key 映射到对应的 Segment，**因此不用锁定整个类， 只要对单个的 Segment 操作进行上锁操作就可以了**。理论上如果有 n 个 Segment，那么最多可以同时支持 n 个线程的并发访问，从而大大提高了并发访问的效率。
 
+
+  [1]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/21/1516471388763.jpg
