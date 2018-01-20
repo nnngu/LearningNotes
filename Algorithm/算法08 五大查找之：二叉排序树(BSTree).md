@@ -23,7 +23,7 @@ GitHub：[https://github.com/nnngu](https://github.com/nnngu)
 
 下面是二叉排序树的图示，通过它可以加深对二叉排序树的理解。
 
-![](http://images2017.cnblogs.com/blog/1313428/201801/1313428-20180115232749099-1202098429.png)
+![][1]
 
 ## 2、二叉排序树常见的操作及思路
 
@@ -41,7 +41,7 @@ GitHub：[https://github.com/nnngu](https://github.com/nnngu)
 
 **此时的二叉排序树如下图：**
 
-![](http://images2017.cnblogs.com/blog/1313428/201801/1313428-20180115233659646-157343746.png)
+![][2]
 
 ### 2-2、查找节点
 
@@ -59,17 +59,17 @@ GitHub：[https://github.com/nnngu](https://github.com/nnngu)
 
 （1）删除的是叶节点(即没有孩子节点的)。比如20，删除它不会破坏原来树的结构，最简单。如图所示。
 
-![](http://images2017.cnblogs.com/blog/1313428/201801/1313428-20180115234324803-1791940212.png)
+![][3]
 
 （2）删除的是单孩子节点。比如90，删除它后需要将它的孩子节点与自己的父节点相连。情形比第一种复杂一些。
 
-![](http://images2017.cnblogs.com/blog/1313428/201801/1313428-20180115234722021-232139621.png)
+![][4]
 
 （3）删除的是有左右孩子的节点。比如根节点50
 
 这里有一个问题就是删除它后，谁将作为根节点？**利用二叉树的中序遍历，就是右节点的左子树的最左孩子**。
 
-![](http://images2017.cnblogs.com/blog/1313428/201801/1313428-20180116000406537-1552914566.png)
+![][5]
 
 ## 3、代码
 
@@ -225,7 +225,12 @@ BSTreeOperateTest.java
 
 运行结果：
 
-![][1]
+![][6]
 
 
-  [1]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/21/1516467321982.jpg
+  [1]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/21/1516485386411.jpg
+  [2]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/21/1516485447505.jpg
+  [3]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/21/1516485491037.jpg
+  [4]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/21/1516485533633.jpg
+  [5]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/21/1516485588434.jpg
+  [6]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/21/1516467321982.jpg
