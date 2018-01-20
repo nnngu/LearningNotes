@@ -15,7 +15,7 @@ Java的参数传递，不管是基本数据类型还是引用类型的参数，*
 
  我们可以看一下microsoft的文档中对按引用传递参数的定义（如下截图）：<https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/ref#passing-an-argument-by-reference>  
 
-![](http://images2017.cnblogs.com/blog/1313428/201801/1313428-20180117012532662-1383872913.png)
+![][1]
 
 ### 1、基本数据类型的参数
 
@@ -38,11 +38,11 @@ TransferTest.java
 
 运行结果：
 
-![](http://images2017.cnblogs.com/blog/1313428/201801/1313428-20180116231340787-453502639.png)
+![][2]
 
 这个传递过程的示意图如下：
 
-![](http://images2017.cnblogs.com/blog/1313428/201801/1313428-20180116232730537-1218992078.png)
+![][3]
 
 num作为参数传递给changeNum()方法时，是将内存空间中num所指向的那个存储单元中存放的值1传递给了changeNum()方法中的x变量，而这个x变量也在内存空间中分配了一个存储单元，这个时候，就把num的值1传递给了x的这个存储单元中。此后，在changeNum()方法中对x的一切操作都是针对x所指向的这个存储单元，与num所指向的那个存储单元没有关系了！
 
@@ -76,13 +76,13 @@ TransferTest2.java  
 
 运行结果：
 
-![](http://images2017.cnblogs.com/blog/1313428/201801/1313428-20180117062547818-886816427.png)
+![][4]
 
 可以看出两次打印person的地址值是一样的，即调用完change() 方法之后，person变量并没有发生改变。
 
 这个传递过程的示意图如下：
 
-![](http://images2017.cnblogs.com/blog/1313428/201801/1313428-20180117001417209-2073627440.png)
+![][5]
 
 当执行到第3行代码时，程序在堆内存中开辟了一块内存空间用来存储Person类的实例对象，同时在栈内存中开辟了一个存储单元用来存储该实例对象的引用，即上图中person指向的存储单元。
 
@@ -91,4 +91,8 @@ TransferTest2.java  
 下一篇文章会分析[如何用java语言实现按引用传递参数的效果](http://www.cnblogs.com/nnngu/p/8300164.html)
 
 
-
+  [1]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/21/1516471639380.jpg
+  [2]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/21/1516471699788.jpg
+  [3]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/21/1516471736135.jpg
+  [4]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/21/1516471785596.jpg
+  [5]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/21/1516471828124.jpg
