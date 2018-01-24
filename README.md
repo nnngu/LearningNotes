@@ -35,5 +35,6 @@
 * [008 如何用java语言实现C Sharp中的ref关键字(按引用传递参数)的效果](https://github.com/nnngu/LearningNotes/blob/master/Java%20Basis/008%20%E5%A6%82%E4%BD%95%E7%94%A8java%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0C%20Sharp%E4%B8%AD%E7%9A%84ref%E5%85%B3%E9%94%AE%E5%AD%97(%E6%8C%89%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0)%E7%9A%84%E6%95%88%E6%9E%9C.md)
 * [009 java中堆和栈的区别](https://github.com/nnngu/LearningNotes/blob/master/Java%20Basis/009%20java%E4%B8%AD%E5%A0%86%E5%92%8C%E6%A0%88%E7%9A%84%E5%8C%BA%E5%88%AB.md)
 * [010 有顺序的Map的实现类：TreeMap和LinkedHashMap](https://github.com/nnngu/LearningNotes/blob/master/Java%20Basis/010%20%E6%9C%89%E9%A1%BA%E5%BA%8F%E7%9A%84Map%E7%9A%84%E5%AE%9E%E7%8E%B0%E7%B1%BB%EF%BC%9ATreeMap%E5%92%8CLinkedHashMap.md)
+* [011 抽象类和接口的区别](https://github.com/nnngu/LearningNotes/blob/master/Java%20Basis/011%20%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%8C%BA%E5%88%AB.md)
 
 
