@@ -17,7 +17,7 @@ GitHub：[https://github.com/nnngu](https://github.com/nnngu)
 
 四、利用反射机制能获得什么信息
 
-五、反射创建对象的三种方式
+五、反射创建 Class 对象的三种方式
 
 
 
