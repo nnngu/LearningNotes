@@ -92,7 +92,7 @@ Constructor[] getDeclaredConstructors() // 获得public的所有构造器
 ```
 常用的就这些，知道这些，其他的都好办……
 
-## 五、反射创建对象的三种方式
+## 五、反射创建 Class 对象的三种方式
 
 ```java
 // 创建对象的方式一：( 对象.getClass() )
