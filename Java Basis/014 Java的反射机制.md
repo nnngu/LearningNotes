@@ -60,13 +60,13 @@ OK，有了对象就什么都好办了，想要什么信息就有什么信息了
 获得构造器的方法 
 
 ```java
-	Constructor getConstructor(Class[] params) // 根据指定参数获得public构造器
+Constructor getConstructor(Class[] params) // 根据指定参数获得public构造器
 
-    Constructor[] getConstructors() // 获得public的所有构造器
+Constructor[] getConstructors() // 获得public的所有构造器
 
-    Constructor getDeclaredConstructor(Class[] params) // 根据指定参数获得public和非public的构造器
+Constructor getDeclaredConstructor(Class[] params) // 根据指定参数获得public和非public的构造器
 
-    Constructor[] getDeclaredConstructors() // 获得public的所有构造器 
+Constructor[] getDeclaredConstructors() // 获得public的所有构造器 
 ```
 
 获得方法的方法 
