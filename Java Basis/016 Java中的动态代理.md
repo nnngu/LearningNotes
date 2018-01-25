@@ -37,9 +37,9 @@ GitHub：[https://github.com/nnngu](https://github.com/nnngu)
 
 jdk和cglib两种解决方案。
 
-要生产一个类A的代理类，唯一需要了解的就是生成一个什么类，因此就有了基于该类的接口构造一个“A”。
+要生产一个类A的代理类，唯一需要了解的就是生成一个什么类，所以需要类A的接口。
 
-至于如何生成一个class文件，在既定规则下你当然可以先生产java文件，再编译成class文件。而最好的做法是直接操作字节码文件，jdk和cglib生成字节码文件分别用了sun的ProxyGenerator和开源项目ASM字节码框架。
+至于如何生成一个class文件，在既定规则下你可以先生成java文件，再编译成class文件。而最好的做法是直接操作字节码文件，jdk操作字节码文件用了反射包里面的接口和类，cglib操作字节码文件用了开源框架asm框架。
 
 ![][1]
 
@@ -166,7 +166,7 @@ public class TestCglibMethodInterceptor {
         enhancer.setSuperclass(UserServiceImpl.class);
         enhancer.setCallback(cglibProxy);
 
-        UserService o = (UserService) enhancer.create();
+        UserServiceImpl o = (UserServiceImpl) enhancer.create();
         o.getName(1);
         o.getAge(1);
     }
@@ -177,6 +177,14 @@ public class TestCglibMethodInterceptor {
 运行结果：
 
 ![][3]
+
+## 总结
+
+JDK动态代理的原理是根据定义好的规则，用传入的接口创建一个新类，这就是为什么采用JDK动态代理时只能用接口引用指向代理，而不能用传入的类引用指向代理。
+
+cglib采用的是创建一个继承实现类的子类，用asm库动态修改子类的代码来实现的，所以可以用传入的类引用指向代理类。
+
+
 
 
   [1]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/26/1516913969285.jpg
