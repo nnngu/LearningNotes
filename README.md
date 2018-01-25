@@ -40,5 +40,6 @@
 * [013 BIO、NIO、AIO的区别](https://github.com/nnngu/LearningNotes/blob/master/Java%20Basis/013%20BIO%E3%80%81NIO%E3%80%81AIO%E7%9A%84%E5%8C%BA%E5%88%AB.md)
 * [014 Java的反射机制](https://github.com/nnngu/LearningNotes/blob/master/Java%20Basis/014%20Java%E7%9A%84%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6.md)
 * [015 反射中的 Class.forName() 与 ClassLoader.loadClass() 的区别](https://github.com/nnngu/LearningNotes/blob/master/Java%20Basis/015%20%E5%8F%8D%E5%B0%84%E4%B8%AD%E7%9A%84%20Class.forName()%20%E4%B8%8E%20ClassLoader.loadClass()%20%E7%9A%84%E5%8C%BA%E5%88%AB.md)
+* [016 Java中的动态代理](https://github.com/nnngu/LearningNotes/blob/master/Java%20Basis/016%20Java%E4%B8%AD%E7%9A%84%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86.md)
 
 
