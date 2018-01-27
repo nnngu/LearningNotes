@@ -40,7 +40,7 @@
 最后点击Finish，完成创建。
 
 
-如果右下角弹出下图这个提示，点击`Enable Auto-Import`
+如果右下角弹出下面这个提示，点击`Enable Auto-Import`
 
 ![如果弹出这个提示，点击Enable Auto-Import][7]
 
@@ -124,6 +124,7 @@ Maven项目创建好了，接下来我们要添加一些jar包的依赖，也就
             <artifactId>jstl</artifactId>
             <version>1.2</version>
         </dependency>
+
         <!--spring默认的json转换-->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
@@ -180,12 +181,12 @@ Maven项目创建好了，接下来我们要添加一些jar包的依赖，也就
             <version>4.2.7.RELEASE</version>
         </dependency>
     </dependencies>
-    <build>
-        <finalName>seckill</finalName>
-    </build>
 
 </project>
 ```
+
+
+
 
 
 
