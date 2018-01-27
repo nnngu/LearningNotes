@@ -118,13 +118,93 @@ USE ngu_seckill;
 
 完整的数据库sql代码，在项目的`sql`文件夹里的`ngu_seckill.sql`
 
-## 修改`web.xml`
+## 创建实体类
 
-打开`WEB-INF`下的`web.xml`，修改为以下代码:
+先创建秒杀商品类`com/nnngu/entity/Seckill.java`
 
-```xml
+```java
+package com.nnngu.entity;
+
+import java.io.Serializable;
+import java.time.LocalDateTime;
+
+/**
+ * 秒杀商品
+ */
+public class Seckill implements Serializable {
+
+    private static final long serialVersionUID = 2912164127598660137L;
+    /* 主键ID*/
+    private long seckillId;
+    /*  秒杀商品名字 */
+    private String name;
+	
+	/* 省略... */
+	... ...
+	
+```
+
+创建秒杀状态类`com/nnngu/entity/SuccessKilled.java`
+
+```java
+package com.nnngu.entity;
+
+import java.io.Serializable;
+import java.time.LocalDateTime;
+
+/**
+ * 秒杀后的状态
+ */
+public class SuccessKilled implements Serializable {
+    private static final long serialVersionUID = 1834437127882846202L;
+
+    private long seckillId;
+    
+    /* 用户的手机号码*/
+    private long userPhone;
+	
+	/* 省略... */
+	... ...
+	
+```
+
+## 为实体类创建对应的mapper接口，也就是dao接口
+
+`com/nnngu/dao/SeckillMapper.java`
+
+```java
+package com.nnngu.dao;
+
+import com.nnngu.entity.Seckill;
+import org.apache.ibatis.annotations.Param;
+
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Map;
+
+public interface SeckillMapper {
+    /* 省略... */
+	... ...
+	
+}
+```
+
+`com/nnngu/dao/SuccessKilledMapper.java`
+
+```java
+package com.nnngu.dao;
+
+import com.nnngu.entity.SuccessKilled;
+import org.apache.ibatis.annotations.Param;
+
+public interface SuccessKilledMapper {
+    /* 省略... */
+	... ...
+	
+}
 
 ```
+
 
 
   [1]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517020356103.jpg
