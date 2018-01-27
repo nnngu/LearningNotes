@@ -102,7 +102,9 @@ public class RepeatKillException extends SeckillException{
 在这里开启了基于注解的事务，常见的事务操作有以下几种方法：
 
 * 在Spring早期版本中是使用ProxyFactoryBean+XMl方式来配置事务。
+
 * 在Spring配置文件使用tx:advice+aop命名空间，好处就是一次配置永久生效，你无须去关心中间出的问题，不过出错了你很难找出在哪里出了问题。
+
 * 注解@Transactional的方式，注解可以在方法定义，接口定义，类定义。可以在public方法上，但是不能注解在private、final、static等方法上，因为Spring的事务管理默认是使用cglib动态代理的：
   * private方法因为访问权限限制，无法被子类覆盖
   * final方法无法被子类覆盖
