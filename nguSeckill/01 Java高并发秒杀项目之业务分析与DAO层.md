@@ -6,8 +6,8 @@
 这是一个整合IDEA+Maven+SSM框架的高并发的商品秒杀项目。我们将分为以下几篇文章来进行详细的讲解：
 
 * 01 Java高并发秒杀项目之业务分析与DAO层
-* 02 Java高并发秒杀项目之web层
-* 03 Java高并发秒杀项目之Service层
+* 02 Java高并发秒杀项目之Service层
+* 03 Java高并发秒杀项目之web层
 * 04 Java高并发秒杀项目之高并发优化
 
 ## 项目的效果图
@@ -215,14 +215,14 @@ public interface SuccessKilledMapper {
 
 ```xml
 <!-- 这里的代码省略 -->
-<!-- 具体请查看项目的源代码 -->
+<!-- 请参照项目的源代码 -->
 ```
 
 `com.nnngu.dao/SuccessKilledMapper.xml`
 
 ```xml
 <!-- 这里的代码省略 -->
-<!-- 具体请查看项目的源代码 -->
+<!-- 请参照项目的源代码 -->
 ```
 
 ## 创建Mybatis的配置文件mybatis-config.xml
@@ -232,6 +232,39 @@ public interface SuccessKilledMapper {
 `mybatis-config.xml`配置文件的内容参照项目的源代码
 
 
+## 建立连接数据库的配置文件`jdbc.properties`
+
+![][18]
+
+**注意：** `jdbc.properties` 里面的属性要根据自己的情况进行修改。
+
+## 建立Spring的dao的配置文件
+
+**创建`applicationContext-dao.xml`如下图：**
+
+![][19]
+
+`applicationContext-dao.xml`文件的具体代码请参照项目的源代码。
+
+## 测试
+
+创建测试类 `com/nnngu/dao/SeckillMapperTest.java` 如下图：
+
+![][20]
+
+该文件的具体代码请参照项目的源代码。
+
+### 测试结果
+
+测试查询所有商品的方法`queryAll()`
+
+![][21]
+
+测试结果如下：
+
+![][22]
+
+到此，我们成功完成了Dao层开发及测试。下篇文章 [02 Java高并发秒杀项目之Service层]()
 
 
 
@@ -252,3 +285,8 @@ public interface SuccessKilledMapper {
   [15]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517065310557.jpg
   [16]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/28/1517069800569.jpg
   [17]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/28/1517070510826.jpg
+  [18]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/28/1517071709680.jpg
+  [19]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/28/1517072120210.jpg
+  [20]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/28/1517076548761.jpg
+  [21]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/28/1517076812755.jpg
+  [22]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/28/1517077063824.jpg
