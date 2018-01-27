@@ -205,6 +205,34 @@ public interface SuccessKilledMapper {
 
 ```
 
+## 创建对应的`mapper.xml`
+
+在`resources`目录下创建`com.nnngu.dao`包，然后创建`SeckillMapper.xml` 和 `SuccessKilledMapper.xml`，如下图：
+
+![][16]
+
+`com.nnngu.dao/SeckillMapper.xml`
+
+```xml
+<!-- 省略 -->
+<!-- 具体请查看项目的源代码 -->
+```
+
+`com.nnngu.dao/SuccessKilledMapper.xml`
+
+```xml
+<!-- 省略 -->
+<!-- 具体请查看项目的源代码 -->
+```
+
+## 创建Mybatis的配置文件mybatis-config.xml
+
+![][17]
+
+`mybatis-config.xml`配置文件的内容参照项目的源代码
+
+
+
 
 
   [1]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517020356103.jpg
@@ -222,3 +250,5 @@ public interface SuccessKilledMapper {
   [13]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517064377716.jpg
   [14]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517064456606.jpg
   [15]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517065310557.jpg
+  [16]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/28/1517069800569.jpg
+  [17]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/28/1517070510826.jpg
