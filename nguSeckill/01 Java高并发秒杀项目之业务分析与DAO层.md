@@ -26,14 +26,17 @@
 以IntelliJ IDEA为例，点击左上角`File > New > Project > Maven`
 
 ![然后点击Next继续；][4]
+
 然后点击Next继续；
 
 
 ![填写相关信息，点击Next；][5]
+
 填写相关信息，点击Next；
 
 
 ![最后点击Finish，完成创建。][6]
+
 最后点击Finish，完成创建。
 
 
@@ -43,7 +46,7 @@
 
 ## 构建pom文件
 
-Maven项目创建好了，接下来我们要添加一些基本的JAR包的依赖，也就是在`pom.xml`中添加各种开源组件的坐标。
+Maven项目创建好了，接下来我们要添加一些jar包的依赖，也就是在`pom.xml`中添加各种开源组件的坐标。
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
