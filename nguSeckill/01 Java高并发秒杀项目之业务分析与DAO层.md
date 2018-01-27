@@ -23,7 +23,7 @@
 
 ## 新建一个Maven项目
 
-以IntelliJ IDEA为例，点击左上角`File > New > Project > Maven`
+以IntelliJ IDEA为例，点击`File > New > Project > Maven`
 
 ![然后点击Next继续；][4]
 
@@ -44,6 +44,43 @@
 
 ![如果弹出这个提示，点击Enable Auto-Import][7]
 
+## 创建webapp目录
+
+点击`File > Project Structure`
+
+步骤1
+
+![][8]
+
+步骤2
+
+![][9]
+
+步骤3
+
+![][10]
+
+步骤4
+
+![][11]
+
+步骤5
+
+![][12]
+
+步骤6
+
+![][13]
+
+步骤7
+
+![][14]
+
+步骤8
+
+![][15]
+
+
 ## 构建pom文件
 
 Maven项目创建好了，接下来我们要添加一些jar包的依赖，也就是在`pom.xml`中添加各种开源组件的坐标。
@@ -59,144 +96,35 @@ Maven项目创建好了，接下来我们要添加一些jar包的依赖，也就
     <artifactId>nguSeckill</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <dependencies>
+        <!-- 省略... -->
+		... ...
+        
+```
+完整的代码，请查看项目里的`pom.xml`文件
 
-        <!--junit测试-->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>test</scope>
-        </dependency>
+## 建立数据库
 
-        <!--配置日志相关,日志门面使用slf4j,日志的具体实现由logback实现-->
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <version>1.1.7</version>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.21</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>2.6.1</version>
-        </dependency>
+```sql
+-- 创建一个数据库
+CREATE DATABASE ngu_seckill;
 
-        <!--数据库相关依赖-->
-        <!--首先导入连接Mysql数据连接-->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.39</version>
-        </dependency>
+-- 使用数据库
+USE ngu_seckill;
 
-        <!--导入数据库连接池-->
-        <dependency>
-            <groupId>c3p0</groupId>
-            <artifactId>c3p0</artifactId>
-            <version>0.9.1.2</version>
-        </dependency>
+-- 省略...
+... ...
 
-        <!--导入mybatis依赖-->
-        <dependency>
-            <groupId>org.mybatis</groupId>
-            <artifactId>mybatis</artifactId>
-            <version>3.4.2</version>
-        </dependency>
-        <dependency>
-            <groupId>org.mybatis</groupId>
-            <artifactId>mybatis-spring</artifactId>
-            <version>1.3.1</version>
-        </dependency>
-
-        <!--导入Servlet web相关的依赖-->
-        <dependency>
-            <groupId>taglibs</groupId>
-            <artifactId>standard</artifactId>
-            <version>1.1.2</version>
-        </dependency>
-        <dependency>
-            <groupId>jstl</groupId>
-            <artifactId>jstl</artifactId>
-            <version>1.2</version>
-        </dependency>
-
-        <!--spring默认的json转换-->
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>2.8.5</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>3.1.0</version>
-        </dependency>
-
-        <!--导入spring相关依赖-->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-core</artifactId>
-            <version>4.3.6.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-beans</artifactId>
-            <version>4.3.6.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-            <version>4.3.6.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-jdbc</artifactId>
-            <version>4.3.7.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-tx</artifactId>
-            <version>4.3.6.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
-            <version>4.3.6.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-            <version>4.3.7.RELEASE</version>
-        </dependency>
-
-        <!--导入springTest-->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-test</artifactId>
-            <version>4.2.7.RELEASE</version>
-        </dependency>
-    </dependencies>
-
-</project>
 ```
 
+完整的数据库sql代码，在项目的`sql`文件夹里的`ngu_seckill.sql`
 
+## 修改`web.xml`
 
+打开`WEB-INF`下的`web.xml`，修改为以下代码:
 
+```xml
 
-
-
-
-
-
-
-
-
+```
 
 
   [1]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517020356103.jpg
@@ -206,3 +134,11 @@ Maven项目创建好了，接下来我们要添加一些jar包的依赖，也就
   [5]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517021904910.jpg
   [6]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517022082406.jpg
   [7]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517022266134.jpg
+  [8]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517061858789.jpg
+  [9]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517062252122.jpg
+  [10]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517061346663.jpg
+  [11]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517061459422.jpg
+  [12]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517061601898.jpg
+  [13]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517064377716.jpg
+  [14]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517064456606.jpg
+  [15]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517065310557.jpg
