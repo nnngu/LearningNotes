@@ -96,7 +96,7 @@ Maven项目创建好了，接下来我们要添加一些jar包的依赖，也就
     <artifactId>nguSeckill</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-        <!-- 省略... -->
+        <!-- 代码省略，请参照项目的源代码 -->
 		... ...
         
 ```
@@ -139,7 +139,7 @@ public class Seckill implements Serializable {
     /*  秒杀商品名字 */
     private String name;
 	
-	/* 省略... */
+	/* 代码省略，请参照项目的源代码 */
 	... ...
 	
 ```
@@ -163,7 +163,7 @@ public class SuccessKilled implements Serializable {
     /* 用户的手机号码*/
     private long userPhone;
 	
-	/* 省略... */
+	/* 代码省略，请参照项目的源代码 */
 	... ...
 	
 ```
@@ -183,7 +183,7 @@ import java.util.List;
 import java.util.Map;
 
 public interface SeckillMapper {
-    /* 省略... */
+    /* 代码省略，请参照项目的源代码 */
 	... ...
 	
 }
@@ -198,7 +198,7 @@ import com.nnngu.entity.SuccessKilled;
 import org.apache.ibatis.annotations.Param;
 
 public interface SuccessKilledMapper {
-    /* 省略... */
+    /* 代码省略，请参照项目的源代码 */
 	... ...
 	
 }
@@ -214,14 +214,14 @@ public interface SuccessKilledMapper {
 `com.nnngu.dao/SeckillMapper.xml`
 
 ```xml
-<!-- 省略 -->
+<!-- 这里的代码省略 -->
 <!-- 具体请查看项目的源代码 -->
 ```
 
 `com.nnngu.dao/SuccessKilledMapper.xml`
 
 ```xml
-<!-- 省略 -->
+<!-- 这里的代码省略 -->
 <!-- 具体请查看项目的源代码 -->
 ```
 
