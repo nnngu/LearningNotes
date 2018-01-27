@@ -114,10 +114,10 @@ public class RepeatKillException extends SeckillException{
 
 ### 不能被Spring AOP事务增强的方法
 
-序号 |	动态代理策略 |	不能被事物增强的方法
+序号 |	动态代理策略 |	不能被事务增强的方法
 :-: | :-: | :-: 
-1	| 基于接口的动态代理	 | 出了public以外的所有方法,并且 public static 的方法也不能被增强
-2	| 基于Cglib的动态代理 |  private,static,final的方法
+1	| 基于JDK的动态代理	 | 除了`public`以外的所有方法，并且 `public static` 的方法也不能被增强
+2	| 基于cglib的动态代理 |  privat，static，final 的方法
 
 
 
