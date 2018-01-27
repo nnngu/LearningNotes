@@ -46,5 +46,6 @@
 
 ## nguSeckill
 * [01 Java高并发秒杀项目之业务分析与DAO层](https://github.com/nnngu/LearningNotes/blob/master/nguSeckill/01%20Java%E9%AB%98%E5%B9%B6%E5%8F%91%E7%A7%92%E6%9D%80%E9%A1%B9%E7%9B%AE%E4%B9%8B%E4%B8%9A%E5%8A%A1%E5%88%86%E6%9E%90%E4%B8%8EDAO%E5%B1%82.md)
+* [02 Java高并发秒杀项目之Service层](https://github.com/nnngu/LearningNotes/blob/master/nguSeckill/02%20Java%E9%AB%98%E5%B9%B6%E5%8F%91%E7%A7%92%E6%9D%80%E9%A1%B9%E7%9B%AE%E4%B9%8BService%E5%B1%82.md)
 
 
