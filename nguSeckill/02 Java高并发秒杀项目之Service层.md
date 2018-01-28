@@ -136,6 +136,8 @@ public class RepeatKillException extends SeckillException{
 
 ![][3]
 
+到此，我们成功完成了Service层开发及测试。
+
 ### 下一篇：[03 Java高并发秒杀项目之web层](https://github.com/nnngu/LearningNotes/blob/master/nguSeckill/03%20Java%E9%AB%98%E5%B9%B6%E5%8F%91%E7%A7%92%E6%9D%80%E9%A1%B9%E7%9B%AE%E4%B9%8Bweb%E5%B1%82.md)
 
 
