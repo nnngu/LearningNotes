@@ -12,7 +12,7 @@
 
 View(页面) > Controller(控制层) > Service(业务逻辑) > Dao(数据访问) > Database(数据库)
 
-首先还是接口的设计，设计秒杀商品的接口，首先在`com.nnngu`包下建立 `interfaces` 这个包，这个包里面存放 `Service` 相关的接口，然后建立`SeckillService`接口文件，如下图：
+首先还是接口的设计，设计秒杀商品的接口，在`com.nnngu.service.interfaces`包下建立`SeckillService.java`接口文件，如下图：
 
 ![][1]
 
@@ -84,7 +84,7 @@ public class RepeatKillException extends SeckillException{
 
 ```
 
-## 实现`Service`接口
+## 实现Service接口
 
 `com.nnngu.service`包下创建`SeckillServiceImpl.java`类，具体代码请参照项目的源代码。
 
@@ -141,6 +141,6 @@ public class RepeatKillException extends SeckillException{
 ### 下一篇：[03 Java高并发秒杀项目之web层](https://github.com/nnngu/LearningNotes/blob/master/nguSeckill/03%20Java%E9%AB%98%E5%B9%B6%E5%8F%91%E7%A7%92%E6%9D%80%E9%A1%B9%E7%9B%AE%E4%B9%8Bweb%E5%B1%82.md)
 
 
-  [1]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/28/1517087378325.jpg
+  [1]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/29/1517159588127.jpg
   [2]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/28/1517104665712.jpg
   [3]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/28/1517104944042.jpg
