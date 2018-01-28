@@ -96,7 +96,7 @@ public class RepeatKillException extends SeckillException{
 
 ## 注入Service
 
-在`resources/spring`下建立`applicationContext-service.xml`文件,用来配置`Service`层
+在`resources/spring`下建立`applicationContext-service.xml`文件，用来配置`Service`层
 
 `applicationContext-service.xml`的代码请参照项目的源代码。
 
