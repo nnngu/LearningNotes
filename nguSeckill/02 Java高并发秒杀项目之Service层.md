@@ -119,9 +119,25 @@ public class RepeatKillException extends SeckillException{
 1	| 基于JDK的动态代理	 | 除了`public`以外的所有方法，并且 `public static` 的方法也不能被增强
 2	| 基于cglib的动态代理 |  `private`，`static`，`final` 的方法
 
+## Service层的测试
 
+添加测试类`SeckillServiceImplTest.java`，如下图：
 
+![][2]
 
+`SeckillServiceImplTest.java`的代码请参照项目的源代码。
+
+### 测试结果：
+
+测试的方法：`public void getSeckillList()`
+
+测试结果如下图：
+
+![][3]
+
+### 下一篇：[03 Java高并发秒杀项目之web层](https://github.com/nnngu/LearningNotes/blob/master/nguSeckill/03%20Java%E9%AB%98%E5%B9%B6%E5%8F%91%E7%A7%92%E6%9D%80%E9%A1%B9%E7%9B%AE%E4%B9%8Bweb%E5%B1%82.md)
 
 
   [1]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/28/1517087378325.jpg
+  [2]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/28/1517104665712.jpg
+  [3]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/28/1517104944042.jpg
