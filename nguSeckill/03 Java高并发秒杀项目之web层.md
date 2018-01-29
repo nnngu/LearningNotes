@@ -73,6 +73,7 @@ Github：[https://github.com/nnngu](https://github.com/nnngu)
 
 ![][7]
 
+`list.jsp`里面的代码请参照项目的源代码。
 
 7. 编写秒杀详情页面`detail.jsp`，在下图所示的位置。
 
