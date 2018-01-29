@@ -14,36 +14,43 @@ Github：[https://github.com/nnngu](https://github.com/nnngu)
 ## 项目的效果图
 
 ### 秒杀商品列表
+
 ![秒杀商品列表][1]
 
+### 秒杀未开始（此时正在倒计时）
+
+![秒杀未开始（此时正在倒计时）][2]
+
 ### 开始秒杀提示界面
-![开始秒杀提示界面][2]
+
+![开始秒杀提示界面][3]
 
 ### 秒杀结束提示界面
-![秒杀结束提示界面][3]
+
+![秒杀结束提示界面][4]
 
 ## 新建一个Maven项目
 
 以IntelliJ IDEA为例，点击`File > New > Project > Maven`
 
-![然后点击Next继续；][4]
+![然后点击Next继续；][5]
 
 然后点击Next继续；
 
 
-![填写相关信息，点击Next；][5]
+![填写相关信息，点击Next；][6]
 
 填写相关信息，点击Next；
 
 
-![最后点击Finish，完成创建。][6]
+![最后点击Finish，完成创建。][7]
 
 最后点击Finish，完成创建。
 
 
 如果右下角弹出下面这个提示，点击`Enable Auto-Import`
 
-![如果弹出这个提示，点击Enable Auto-Import][7]
+![如果弹出这个提示，点击Enable Auto-Import][8]
 
 ## 创建webapp目录
 
@@ -51,35 +58,35 @@ Github：[https://github.com/nnngu](https://github.com/nnngu)
 
 步骤1
 
-![][8]
+![][9]
 
 步骤2
 
-![][9]
+![][10]
 
 步骤3
 
-![][10]
+![][11]
 
 步骤4
 
-![][11]
+![][12]
 
 步骤5
 
-![][12]
+![][13]
 
 步骤6
 
-![][13]
+![][14]
 
 步骤7
 
-![][14]
+![][15]
 
 步骤8
 
-![][15]
+![][16]
 
 
 ## 构建pom文件
@@ -109,7 +116,7 @@ Maven项目创建好了，接下来我们要添加一些jar包的依赖，也就
 
 **秒杀系统业务流程如下：**
 
-![][16]
+![][17]
 
 由图可以发现，整个系统其实是针对库存做的系统。用户成功秒杀商品，对于我们系统的操作就是：
 
@@ -117,7 +124,7 @@ Maven项目创建好了，接下来我们要添加一些jar包的依赖，也就
 
 2. 记录用户的购买明细。下面看看我们用户对库存的业务分析：
 
-![][17]
+![][18]
 
 记录用户的秒杀成功信息，我们需要记录：1、谁购买成功了。2、购买成功的时间/有效期。3、付款/发货信息。这些数据组成了用户的秒杀成功信息，也就是用户的购买行为。
 
@@ -127,7 +134,7 @@ MySQL实现秒杀的难点分析：当用户A秒杀id为10的商品时，此时M
 
 我们这个系统需要完成秒杀的哪些功能？先来看看天猫的一个秒杀库存系统：
 
-![][18]
+![][19]
 
 大家看了是不是觉得很复杂？当然不用担心，我们只是实现秒杀的一些功能：1、秒杀接口的暴露。2、执行秒杀的操作。3、相关查询，比如说列表查询，详情页查询。我们实现这三个功能即可。接下来进行具体的编码工作，首先是建立数据库以及Dao层的编码。
 
@@ -238,7 +245,7 @@ public interface SuccessKilledMapper {
 
 在`resources`目录下创建`com.nnngu.dao`包，然后创建`SeckillMapper.xml` 和 `SuccessKilledMapper.xml`，如下图：
 
-![][19]
+![][20]
 
 `com.nnngu.dao/SeckillMapper.xml`
 
@@ -256,14 +263,14 @@ public interface SuccessKilledMapper {
 
 ## 创建Mybatis的配置文件mybatis-config.xml
 
-![][20]
+![][21]
 
 `mybatis-config.xml`配置文件的内容参照项目的源代码
 
 
 ## 建立连接数据库的配置文件`jdbc.properties`
 
-![][21]
+![][22]
 
 **注意：** `jdbc.properties` 里面的属性要根据自己的情况进行修改。
 
@@ -271,7 +278,7 @@ public interface SuccessKilledMapper {
 
 **创建`applicationContext-dao.xml`如下图：**
 
-![][22]
+![][23]
 
 `applicationContext-dao.xml`文件的具体代码请参照项目的源代码。
 
@@ -279,7 +286,7 @@ public interface SuccessKilledMapper {
 
 创建测试类 `com/nnngu/dao/SeckillMapperTest.java` 如下图：
 
-![][23]
+![][24]
 
 该文件的具体代码请参照项目的源代码。
 
@@ -287,37 +294,38 @@ public interface SuccessKilledMapper {
 
 测试查询所有商品的方法`queryAll()`
 
-![][24]
+![][25]
 
 测试结果如下：
 
-![][25]
+![][26]
 
 到此，我们成功完成了Dao层开发及测试。下篇文章 [02 Java高并发秒杀项目之Service层](https://github.com/nnngu/LearningNotes/blob/master/nguSeckill/02%20Java%E9%AB%98%E5%B9%B6%E5%8F%91%E7%A7%92%E6%9D%80%E9%A1%B9%E7%9B%AE%E4%B9%8BService%E5%B1%82.md)
 
 
   [1]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517020356103.jpg
-  [2]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517020518954.jpg
-  [3]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517020478158.jpg
-  [4]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517021726058.jpg
-  [5]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517021904910.jpg
-  [6]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517022082406.jpg
-  [7]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517022266134.jpg
-  [8]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517061858789.jpg
-  [9]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517062252122.jpg
-  [10]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517061346663.jpg
-  [11]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517061459422.jpg
-  [12]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517061601898.jpg
-  [13]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517064377716.jpg
-  [14]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517064456606.jpg
-  [15]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517065310557.jpg
-  [16]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/28/1517078418982.jpg
-  [17]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/28/1517078595990.jpg
-  [18]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/28/1517078980637.jpg
-  [19]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/28/1517069800569.jpg
-  [20]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/28/1517070510826.jpg
-  [21]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/28/1517071709680.jpg
-  [22]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/28/1517072120210.jpg
-  [23]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/28/1517076548761.jpg
-  [24]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/28/1517076812755.jpg
-  [25]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/28/1517077063824.jpg
+  [2]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/30/1517268720971.jpg
+  [3]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517020518954.jpg
+  [4]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517020478158.jpg
+  [5]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517021726058.jpg
+  [6]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517021904910.jpg
+  [7]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517022082406.jpg
+  [8]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517022266134.jpg
+  [9]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517061858789.jpg
+  [10]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517062252122.jpg
+  [11]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517061346663.jpg
+  [12]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517061459422.jpg
+  [13]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517061601898.jpg
+  [14]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517064377716.jpg
+  [15]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517064456606.jpg
+  [16]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/27/1517065310557.jpg
+  [17]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/28/1517078418982.jpg
+  [18]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/28/1517078595990.jpg
+  [19]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/28/1517078980637.jpg
+  [20]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/28/1517069800569.jpg
+  [21]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/28/1517070510826.jpg
+  [22]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/28/1517071709680.jpg
+  [23]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/28/1517072120210.jpg
+  [24]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/28/1517076548761.jpg
+  [25]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/28/1517076812755.jpg
+  [26]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/28/1517077063824.jpg
