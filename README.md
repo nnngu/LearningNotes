@@ -1,3 +1,5 @@
+![](https://raw.githubusercontent.com/nnngu/FigureBed/master/2018/1/29/001.jpeg)
+
 # LearningNotes
 ## Algorithm
 * [算法01 七大排序之：冒泡排序和快速排序](https://github.com/nnngu/LearningNotes/blob/master/Algorithm/%E7%AE%97%E6%B3%9501%20%E4%B8%83%E5%A4%A7%E6%8E%92%E5%BA%8F%E4%B9%8B%EF%BC%9A%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E5%92%8C%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F.md)
@@ -51,3 +53,6 @@
 * [04 Java高并发秒杀项目之高并发优化](https://github.com/nnngu/LearningNotes/blob/master/nguSeckill/04%20Java%E9%AB%98%E5%B9%B6%E5%8F%91%E7%A7%92%E6%9D%80%E9%A1%B9%E7%9B%AE%E4%B9%8B%E9%AB%98%E5%B9%B6%E5%8F%91%E4%BC%98%E5%8C%96.md)
 
 
+ 
+ 
+ 
