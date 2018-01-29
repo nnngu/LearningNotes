@@ -1,5 +1,5 @@
 # 01 Java高并发秒杀项目之业务分析与DAO层
-github：https://github.com/nnngu  
+Github：https://github.com/nnngu  
 项目源代码：https://github.com/nnngu/nguSeckill
 
 ---
