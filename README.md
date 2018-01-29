@@ -1,8 +1,6 @@
 # LearningNotes
 ![](https://raw.githubusercontent.com/nnngu/FigureBed/master/2018/1/29/001.jpeg)
 
----
-
 Github：[https://github.com/nnngu](https://github.com/nnngu)  
 文章仓库：[https://github.com/nnngu/LearningNotes](https://github.com/nnngu/LearningNotes)    
 
