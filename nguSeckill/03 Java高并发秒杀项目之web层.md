@@ -28,6 +28,14 @@ Github：[https://github.com/nnngu](https://github.com/nnngu)
 
 `web.xml`里面的代码请参照项目的源代码。
 
+## 添加 applicationContext-web.xml
+
+添加 `applicationContext-web.xml`，在下图所示的位置。
+
+![][11]
+
+ `applicationContext-web.xml`里面的代码请参照项目的源代码。
+
 ## 接下来编写 SeckillController 
 
 创建`SeckillController.java`，如下图：
@@ -96,14 +104,6 @@ Github：[https://github.com/nnngu](https://github.com/nnngu)
 ![][10]
 
 `detail.jsp`里面的代码请参照项目的源代码。
-
-## 添加 applicationContext-web.xml
-
-添加 `applicationContext-web.xml`，在下图所示的位置。
-
-![][11]
-
- `applicationContext-web.xml`里面的代码请参照项目的源代码。
  
  ## 添加 seckill.js 文件
  
