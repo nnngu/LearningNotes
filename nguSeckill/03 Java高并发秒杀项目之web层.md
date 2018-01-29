@@ -4,11 +4,27 @@ Github：[https://github.com/nnngu](https://github.com/nnngu)
 
 ---
 
-本篇是`Web`层，所以首先要先引入`SpringMvc`
+## 前端交互流程设计
 
-修改`web.xml`，引入`SpringMvc`的`DispatcherServlet`：
+对于一个系统，需要产品经理、前端工程师和后端工程师的参与，产品经理将用户的需求做成一个开发文档交给前端工程师和后端工程师，前端工程师为系统完成页面的开发，后端工程师为系统完成业务逻辑的开发。对于我们这个秒杀系统，它的前端交互流程设计如下图：
 
 ![][1]
+
+这个流程图就告诉了我们详情页的流程逻辑，前端工程师根据这个流程图设计页面，而我们后端工程师根据这个流程图开发我们对应的代码。前端交互流程是系统开发中很重要的一部分，接下来进行`Restful`接口设计的学习。
+
+## Restful接口设计学习
+
+什么是Restful？它就是一种优雅的URL表述方式，用来设计我们资源的访问URL。通过这个URL的设计，我们就可以很自然的感知到这个URL代表的是哪种业务场景或者什么样的数据或资源。基于Restful设计的URL，对于我们接口的使用者、前端、web系统或者搜索引擎甚至是我们的用户，都是非常友好的。关于Restful的了解大家去网上一搜一大把，我这里就不再做介绍了。下面看看我们这个秒杀系统的URL设计：
+
+![][2]
+
+接下来基于上述资源接口来开始对Spring MVC框架的使用。
+
+## 配置Spring MVC框架
+
+在`web.xml`文件里面引入`DispatcherServlet`：
+
+![][3]
 
 `web.xml`里面的代码请参照项目的源代码。
 
@@ -16,7 +32,7 @@ Github：[https://github.com/nnngu](https://github.com/nnngu)
 
 创建`SeckillController.java`，如下图：
 
-![][2]
+![][4]
 
 `SeckillController.java`里面的代码请参照项目的源代码。
 
@@ -24,7 +40,7 @@ Github：[https://github.com/nnngu](https://github.com/nnngu)
 
 创建`SeckillResult.java`，如下图：
 
-![][3]
+![][5]
 
 `SeckillResult.java`里面的代码请参照项目的源代码。
 
@@ -55,29 +71,29 @@ Github：[https://github.com/nnngu](https://github.com/nnngu)
 
 3. 下载一个倒计时插件`jquery.countdown.min.js` ，再下载一个操作`Cookie`插件`jquery.cookie.min.js` 如图放置：
 
-![][4]
+![][6]
 
 4. 编写一个公共的头部`jsp`文件，位于`WEB-INF/jsp/common`下的`head.jsp`，如下图：
 
-![][5]
+![][7]
 
 `head.jsp`里面的代码请参照项目的源代码。
 
 5. 编写一个公共的`jstl`标签库文件`tag.jsp`，在下图所示的位置。
 
-![][6]
+![][8]
 
 `tag.jsp`里面的代码请参照项目的源代码。
 
 6. 编写列表页面`list.jsp`，在下图所示的位置。
 
-![][7]
+![][9]
 
 `list.jsp`里面的代码请参照项目的源代码。
 
 7. 编写秒杀详情页面`detail.jsp`，在下图所示的位置。
 
-![][8]
+![][10]
 
 `detail.jsp`里面的代码请参照项目的源代码。
 
@@ -85,7 +101,7 @@ Github：[https://github.com/nnngu](https://github.com/nnngu)
 
 添加 `applicationContext-web.xml`，在下图所示的位置。
 
-![][9]
+![][11]
 
  `applicationContext-web.xml`里面的代码请参照项目的源代码。
  
@@ -93,7 +109,7 @@ Github：[https://github.com/nnngu](https://github.com/nnngu)
  
  添加 `seckill.js` 文件，在下图所示的位置。
  
- ![][10]
+ ![][12]
  
  `seckill.js` 里面的代码请参照项目的源代码。
  
@@ -101,7 +117,7 @@ Github：[https://github.com/nnngu](https://github.com/nnngu)
  
  运行项目，部署到`tomcat`，在浏览器地址栏输入 `http://localhost:8080/seckill/list`，敲回车，即可看到如下图的界面：
  
- ![][11]
+ ![][13]
  
  到此，我们成功完成了web层的开发。
 
@@ -114,14 +130,16 @@ Github：[https://github.com/nnngu](https://github.com/nnngu)
  
 
 
-  [1]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/29/1517174370108.jpg
-  [2]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/29/1517175668689.jpg
-  [3]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/29/1517175867220.jpg
-  [4]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/29/1517177850911.jpg
-  [5]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/29/1517178335741.jpg
-  [6]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/29/1517179505188.jpg
-  [7]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/29/1517179663648.jpg
-  [8]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/29/1517180009140.jpg
-  [9]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/29/1517182288815.jpg
-  [10]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/29/1517183946959.jpg
-  [11]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/29/1517184316644.jpg
+  [1]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/30/1517264048018.jpg
+  [2]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/30/1517269670065.jpg
+  [3]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/29/1517174370108.jpg
+  [4]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/29/1517175668689.jpg
+  [5]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/29/1517175867220.jpg
+  [6]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/29/1517177850911.jpg
+  [7]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/29/1517178335741.jpg
+  [8]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/29/1517179505188.jpg
+  [9]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/29/1517179663648.jpg
+  [10]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/29/1517180009140.jpg
+  [11]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/29/1517182288815.jpg
+  [12]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/29/1517183946959.jpg
+  [13]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/29/1517184316644.jpg
