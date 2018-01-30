@@ -58,6 +58,8 @@ Github：[https://github.com/nnngu](https://github.com/nnngu)
 
 `SeckillResult.java`里面的代码请参照项目的源代码。
 
+到此，控制器的开发任务完成，接下来进行我们的页面开发。
+
 ## 页面的编写
 
 项目的前端页面是由`Bootstrap`开发的，所以我们要先去下载`Bootstrap`或者是使用在线CDN。
