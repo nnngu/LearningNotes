@@ -48,6 +48,8 @@ Github：[https://github.com/nnngu](https://github.com/nnngu)
 
 `SeckillController.java`里面的代码请参照项目的源代码。
 
+`SeckillController.java`中的方法完全是对照Service接口方法进行开发的，第一个方法用于访问我们商品的列表页，第二个方法访问商品的详情页，第三个方法用于返回一个json数据，数据中封装了我们商品的秒杀地址，第四个方法用于封装用户是否秒杀成功的信息，第五个方法用于返回系统当前时间。代码中涉及到一个将返回秒杀商品地址封装为json数据的类，即`SeckillResult`，在dto包中创建它，如下:
+
 ## 建立一个全局ajax请求返回类，返回json
 
 创建`SeckillResult.java`，如下图：
