@@ -127,7 +127,9 @@ Github：[https://github.com/nnngu](https://github.com/nnngu)
  
  ![][13]
  
- 到此，我们成功完成了web层的开发。
+点击相应商品后面的详情页链接即可查看该商品是否开启秒杀、以及秒杀该商品等活动。
+ 
+到此，我们成功完成了web层的开发。但一个秒杀系统，往往是会有成千上万的人进行参与，我们目前的系统是抗不起多少高并发操作的，所以后面我们会对本系统进行高并发的优化。请查看我的下一篇文章。
 
 ### 下一篇：[04 Java高并发秒杀项目之高并发优化](https://github.com/nnngu/LearningNotes/blob/master/nguSeckill/04%20Java高并发秒杀项目之高并发优化.md)
  
