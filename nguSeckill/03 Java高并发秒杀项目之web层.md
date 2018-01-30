@@ -36,13 +36,13 @@ Github：[https://github.com/nnngu](https://github.com/nnngu)
 
  `applicationContext-web.xml`里面的代码请参照项目的源代码。
  
-这样我们便完成了Spring MVC的相关配置(即将Spring MVC框架整合到了我们的项目中)，接下来就要基于Restful接口进行我们项目的控制器 (SeckillController) 的开发工作了。
+这样我们便完成了Spring MVC的相关配置(即将Spring MVC框架整合到了我们的项目中)，接下来就要基于Restful接口进行我们项目的控制器 `SeckillController` 的开发工作了。
 
 ## 编写 SeckillController 
 
 控制器中的每一个方法都对应我们系统中的一个资源URL，其设计应该遵循Restful接口的设计风格。
 
-创建`SeckillController.java`，如下图：
+创建控制器`SeckillController.java`，如下图：
 
 ![][4]
 
