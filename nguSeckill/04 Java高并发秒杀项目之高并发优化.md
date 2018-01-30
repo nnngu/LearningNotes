@@ -81,9 +81,46 @@ Java操作Redis使用的是jedis包。
     }
 ```
 
-### 写存储过程
+## 写存储过程
 
-去Mysql控制台执行储存过程
+去Mysql的控制台执行储存过程produce.sql里面的语句。
+
+`produce.sql`文件位于项目的sql目录下。
+
+在`SeckillMapper.java`接口中声明`killByProcedure()`方法
+
+```java
+    /**
+     * 使用储存过程执行秒杀
+     *
+     * @param paramMap
+     */
+    void killByProcedure(Map<String, Object> paramMap);
+```
+
+然后在`SeckillMapper.xml`中写`sql`语句
+
+`SeckillMapper.xml`文件里面的代码请参照项目的源代码。
+
+下一步在`SeckillService.java`接口中声明 `executeSeckillProcedure()`方法
+
+在pom.xml中添加`commons-collections`的依赖，如下图：
+
+![][5]
+
+然后在`SeckillServiceImpl.java`中实现`executeSeckillProcedure()`方法。
+
+然后改造执行秒杀的`executeSeckill()`方法，减少一道虚拟机GC程序，优化性能。
+
+在`SeckillServiceImplTest.java`中编写测试方法`executeSeckillProcedureTest()`。
+
+测试结果：
+
+![][6]
+
+改造`SeckillController.java`中的`execute()`方法，把一开始调用普通方法的改成调用储存过程的方法。
+
+到此，文章总结完成，感谢您的阅读。
 
 
 
@@ -94,3 +131,5 @@ Java操作Redis使用的是jedis包。
   [2]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/30/1517325829466.jpg
   [3]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/30/1517325955175.jpg
   [4]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/30/1517326483818.jpg
+  [5]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/31/1517328581037.jpg
+  [6]: https://www.github.com/nnngu/FigureBed/raw/master/2018/1/31/1517330110383.jpg
