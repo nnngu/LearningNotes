@@ -40,6 +40,8 @@ Github：[https://github.com/nnngu](https://github.com/nnngu)
 
 ## 编写 SeckillController 
 
+控制器中的每一个方法都对应我们系统中的一个资源URL，其设计应该遵循Restful接口的设计风格。
+
 创建`SeckillController.java`，如下图：
 
 ![][4]
