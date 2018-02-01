@@ -59,9 +59,12 @@ setState()总是会触发一次组件重绘，除非在shouldComponentUpdate()�
 </body>
 ```
 
-
+通过点击 h2 标签来使得点击计数器加 1。
 
 ## 替换状态：replaceState
+
+`replaceState(object nextState[, function callback])`
+
 
 
 ## 设置属性：setProps
