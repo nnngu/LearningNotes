@@ -167,6 +167,10 @@ if __name__ == '__main__':
 
 enjoy 我们的第一个图片下载爬虫吧！当然它不仅能下载百度的图片，依葫芦画瓢，你现在应该能做很多事情了，比如爬取头像，爬淘宝展示图等等。
 
+代码已经放到Githut上 [https://github.com/nnngu/BaiduImageDownload](https://github.com/nnngu/BaiduImageDownload)
+
+
+
 
   [1]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/3/1517624440357.jpg
   [2]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/3/1517624588214.jpg
