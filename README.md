@@ -62,6 +62,7 @@ Github：[https://github.com/nnngu](https://github.com/nnngu)
 
 ## Spider
 * [01 爬取拉勾网职位信息的爬虫](https://github.com/nnngu/LearningNotes/blob/master/Spider/01%20%E7%88%AC%E5%8F%96%E6%8B%89%E5%8B%BE%E7%BD%91%E8%81%8C%E4%BD%8D%E4%BF%A1%E6%81%AF%E7%9A%84%E7%88%AC%E8%99%AB.md)
+* [02 Python爬虫实现百度图片自动下载](https://github.com/nnngu/LearningNotes/blob/master/Spider/02%20Python%E7%88%AC%E8%99%AB%E5%AE%9E%E7%8E%B0%E7%99%BE%E5%BA%A6%E5%9B%BE%E7%89%87%E8%87%AA%E5%8A%A8%E4%B8%8B%E8%BD%BD.md)
 
 
 
