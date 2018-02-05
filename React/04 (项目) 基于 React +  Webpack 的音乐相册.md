@@ -36,7 +36,7 @@ npm install -g generator-react-webpack
 
 3、创建项目，打开你的项目目录，然后输入：`yo react-webpack MusicPhoto`
 
-4、项目的目录如下图：
+4、创建完成，项目的目录如下图：
 
 ![][5]
 
