@@ -169,6 +169,8 @@ enjoy 我们的第一个图片下载爬虫吧！当然它不仅能下载百度�
 
 完整代码已经放到Github上 [https://github.com/nnngu/BaiduImageDownload](https://github.com/nnngu/BaiduImageDownload)
 
+下一篇文章，[我们将用这些图片做一个音乐相册](https://github.com/nnngu/LearningNotes/blob/master/React/04%20(%E9%A1%B9%E7%9B%AE)%20%E5%9F%BA%E4%BA%8E%20React%20+%20%20Webpack%20%E7%9A%84%E9%9F%B3%E4%B9%90%E7%9B%B8%E5%86%8C.md)。
+
 
 
 
