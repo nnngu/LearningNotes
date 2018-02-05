@@ -57,7 +57,7 @@ Github：[https://github.com/nnngu](https://github.com/nnngu)
 * [03 React Props](https://github.com/nnngu/LearningNotes/blob/master/React/03%20React%20Props.md)
 * [04 (项目) 基于 React + Webpack 的音乐相册](https://github.com/nnngu/LearningNotes/blob/master/React/04%20(%E9%A1%B9%E7%9B%AE)%20%E5%9F%BA%E4%BA%8E%20React%20+%20%20Webpack%20%E7%9A%84%E9%9F%B3%E4%B9%90%E7%9B%B8%E5%86%8C.md)
 
-[React中文文档](https://doc.react-china.org/docs/hello-world.html)
+参考：[React中文文档](https://doc.react-china.org/docs/hello-world.html)
 
 
 
