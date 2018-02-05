@@ -71,7 +71,87 @@ npm install json-loader --save-dev
 
 ![][7]
 
+## 添加图片
 
+1、在 src 目录下添加 images 目录和一些图片，如下图：(图片尺寸全部是 260 \* 260) 
+
+![][8]
+
+2、添加 imageDatas.json 如下图：
+
+![][9]
+
+imageDatas.json 里面的代码请参照项目的源代码。
+
+3、在`src/components/Main.js`中引入`imageDatas.json` 代码如下：
+
+```javascript
+// 获取图片的 json 数据
+var imagesData = require('../data/imageDatas.json');
+```
+
+4、根据图片的文件名，生成图片URL。
+
+*src/components/Main.js*
+
+```javascript
+/**
+ * @imagesDataArray  {Array}
+ * @return {Array}
+ */
+imagesData = (function getImageURL(imagesDataArray) {
+  for (var i = 0, j = imagesDataArray.length; i < j; i++) {
+    var singleImageData = imagesDataArray[i];
+
+    singleImageData.imageURL = require('../images/' + singleImageData.fileName);
+
+    imagesDataArray[i] = singleImageData;
+  }
+  return imagesDataArray;
+})(imagesData);
+```
+
+## 配置字体
+
+打开 cfg 目录中的 defaults.js 添加如下配置信息：
+
+![][10]
+
+## 组件的绑定
+
+src/index.html 中的关键代码：
+
+![][11]
+
+src/index.js 中的关键代码：
+
+![][12]
+
+## 代码逻辑
+
+主要的代码逻辑在 `Main.js`中，主要的布局样式在 `App.scss`中。如下图：
+
+![][13]
+
+具体代码请参照项目的源代码 [https://github.com/nnngu/MusicPhoto](https://github.com/nnngu/MusicPhoto)
+
+## 发布到Github Pages
+
+1、修改`cfg/defaults.js`中的`publicPath`，改为`publicPath: './assets/',` 如下图：
+
+![][14]
+
+2、打包，使用`npm run dist`指令。打包完成可以看到如下目录：
+
+![][15]
+
+3、把打包好的目录 push 到 GitHub 的 gh-pages 分支，使用如下命令：
+
+```
+git subtree push --prefix=dist origin gh-pages
+```
+
+4、在GitHub 对应的仓库里面开启 Github Pages 功能，并选择 `gh-pages`分支即可。
 
 
   [1]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/5/1517842690437.jpg
@@ -81,3 +161,11 @@ npm install json-loader --save-dev
   [5]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/6/1517849337904.jpg
   [6]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/6/1517850101903.jpg
   [7]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/6/1517850270658.jpg
+  [8]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/6/1517851778975.jpg
+  [9]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/6/1517851939423.jpg
+  [10]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/6/1517852817008.jpg
+  [11]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/6/1517853041622.jpg
+  [12]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/6/1517853081657.jpg
+  [13]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/6/1517853295536.jpg
+  [14]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/6/1517853662271.jpg
+  [15]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/6/1517853876038.jpg
