@@ -153,6 +153,11 @@ git subtree push --prefix=dist origin gh-pages
 
 4、在GitHub 对应的仓库里面开启 Github Pages 功能，并选择 `gh-pages`分支即可。
 
+**👇👇👇下一篇将会总结完成音乐播放器的过程。👇👇👇**
+
+[05 (项目) 基于 React + Webpack 的音乐相册（下）](https://github.com/nnngu/LearningNotes/blob/master/React/05%20(%E9%A1%B9%E7%9B%AE)%20%E5%9F%BA%E4%BA%8E%20React%20%2B%20Webpack%20%E7%9A%84%E9%9F%B3%E4%B9%90%E7%9B%B8%E5%86%8C%EF%BC%88%E4%B8%8B%EF%BC%89.md)
+
+
 
   [1]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/5/1517842690437.jpg
   [2]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/5/1517842775081.jpg
