@@ -489,6 +489,9 @@ export default Player;
 
 到此，基于 React 的音乐相册的全部功能已经完成了。最终的运行效果如下：
 
+![][5]
+
+源代码：[https://github.com/nnngu/MusicPhoto](https://github.com/nnngu/MusicPhoto)
 
 
 
@@ -498,3 +501,4 @@ export default Player;
   [2]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/9/1518122145709.jpg
   [3]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/9/1518122335010.jpg
   [4]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/9/1518127202415.jpg
+  [5]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/9/1518128437105.jpg
