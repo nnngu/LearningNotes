@@ -50,6 +50,9 @@ Github：[https://github.com/nnngu](https://github.com/nnngu)
 * [016 Java中的动态代理](https://github.com/nnngu/LearningNotes/blob/master/Java%20Basis/016%20Java%E4%B8%AD%E7%9A%84%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86.md)
 
 
+## Struts2
+* [01 Struts2的配置和一个简单的例子](https://github.com/nnngu/LearningNotes/blob/master/Struts2/01%20Struts2%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E4%BE%8B%E5%AD%90.md)
+
 
 ## React 
 * [01 React 组件](https://github.com/nnngu/LearningNotes/blob/master/React/01%20React%20%E7%BB%84%E4%BB%B6.md)
