@@ -185,7 +185,7 @@ Struts2 的核心配置文件为`struts.xml`
 
 到此，Struts2 就配置完成了。
 
-Struts2 官方文档：[http://struts.apache.org/docs/](http://struts.apache.org/docs/) 
+Struts2 官方文档：[http://struts.apache.org/getting-started/](http://struts.apache.org/getting-started/) 
 
 
 
