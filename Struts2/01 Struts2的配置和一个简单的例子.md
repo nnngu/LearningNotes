@@ -18,7 +18,7 @@ Tomcat 8.0.38
 
 ## 添加依赖
 
-依赖的 jar 包有如下几个：
+### 依赖的 jar 包有如下几个：
 
 ```
 commons-fileupload-1.3.3.jar
@@ -31,7 +31,7 @@ struts2-core-2.5.14.1.jar
 javassist-3.20.0-GA.jar
 ```
 
-使用 Maven 构建的项目，需要在 pom.xml 添加如下依赖：
+### 使用 Maven 构建一个项目，并且在 pom.xml 添加如下依赖：
 
 ```xml
         <dependency>
@@ -76,6 +76,123 @@ javassist-3.20.0-GA.jar
         </dependency>
 ```
 
+注意：Struts2.5 与之前的版本有点不同，之前的版本还需要xwork-core.jar。Struts2.5不需要它，因为Struts2.5把xwork的源码合并到了struts2-core中。Struts2.5之前使用logging API，而 Struts2.5 用 log4j API 取代。 
+
+## 在web.xml中配置Struts2框架的核心拦截器StrutsPrepareAndExexuteFilter
+
+![][1]
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <!--配置struts2的核心拦截器-->
+    <filter>
+        <filter-name>struts2</filter-name>
+        <filter-class>org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>struts2</filter-name>
+        <!--拦截所有的url-->
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+</web-app>
+```
+
+注意：Filter的完整类名是：org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter
+
+Struts2.5 以前是：org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter
+
+## 新建一个业务控制类 HelloWorldAction ，继承自com.opensymphony.xwork2.ActionSupport  ， 内容如下：
+
+![][2]
+
+```java
+package com.nnngu.action;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class HelloWorldAction extends ActionSupport {
+    @Override
+    public String execute() throws Exception {
+        System.out.println("正在执行的Action");
+        // 返回视图 SUCCESS，这是框架定义的
+        return SUCCESS;
+    }
+}
+
+```
+
+## 创建好的 Action 类需要在 Struts2 的核心配置文件中进行配置
+
+Struts2 的核心配置文件为`struts.xml`
+
+![][3]
+
+```xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <package name="default" namespace="/" extends="struts-default">
+        <!--访问时使用 localhost:8080/helloworld 访问-->
+        <action name="helloworld" class="com.nnngu.action.HelloWorldAction">
+            <!--结果集，即action类中 SUCCESS 返回的视图-->
+            <result>
+                /result.jsp
+            </result>
+        </action>
+    </package>
+</struts>
+
+```
+
+## 新建一个 result.jsp 文件，用来显示 action 返回的视图
+
+![][4]
+
+```jsp
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>Action Result</title>
+</head>
+<body>
+<h1>恭喜！成功配置好基本的struts2 环境</h1>
+<h2>Hello nnngu！</h2>
+</body>
+</html>
+
+```
+
+## 最后运行项目，在浏览器访问
+
+在浏览器访问 http://localhost:8080/helloworld
+
+展现出来的内容是 result.jsp 的内容。
+
+![][5]
+
+控制台输出 Action 的打印内容
+
+![][6]
+
+到此，Struts2 就配置完成了。
+
+Struts2 官方文档：[http://struts.apache.org/docs/](http://struts.apache.org/docs/) 
 
 
 
+
+  [1]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/10/1518237384079.jpg
+  [2]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/10/1518237771007.jpg
+  [3]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/10/1518238039898.jpg
+  [4]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/10/1518238270326.jpg
+  [5]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/10/1518238463592.jpg
+  [6]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/10/1518238617181.jpg
