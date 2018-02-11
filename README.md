@@ -54,6 +54,12 @@ Github：[https://github.com/nnngu](https://github.com/nnngu)
 * [01 Struts2的配置和一个简单的例子](https://github.com/nnngu/LearningNotes/blob/master/Struts2/01%20Struts2%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E4%BE%8B%E5%AD%90.md)
 
 
+
+## JavaScript
+* [01 用js实现2048小游戏](https://github.com/nnngu/LearningNotes/blob/master/JavaScript/01%20%E7%94%A8js%E5%AE%9E%E7%8E%B02048%E5%B0%8F%E6%B8%B8%E6%88%8F.md)
+
+
+
 ## React 
 * [01 React 组件](https://github.com/nnngu/LearningNotes/blob/master/React/01%20React%20%E7%BB%84%E4%BB%B6.md)
 * [02 React State(状态)](https://github.com/nnngu/LearningNotes/blob/master/React/02%20React%20State(%E7%8A%B6%E6%80%81).md)
