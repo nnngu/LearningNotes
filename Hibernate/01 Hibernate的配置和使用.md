@@ -341,7 +341,7 @@ public class UserDao {
     }
 
     /**
-     * 查，根据id查询一个
+     * 查，根据id查询
      *
      * @param id
      * @return
@@ -438,7 +438,7 @@ public class UserDaoTest {
 
     @Test
     /**
-     * 查，根据id查询一个
+     * 查，根据id查询
      */
     public void testGetById() {
         User user = userDao.getById(2);
