@@ -285,7 +285,6 @@ public class UserDao {
      * @param user
      */
     public void save(User user) {
-
         Session session = HibernateUtils.openSession();
         Transaction tx = null;
         try {
@@ -293,7 +292,7 @@ public class UserDao {
             session.save(user); // 操作数据库
             tx.commit(); // 提交事务
         } catch (RuntimeException e) {
-            session.getTransaction().rollback(); // 回滚事务
+            tx.rollback(); // 回滚事务
             throw e;
         } finally {
             session.close(); // 关闭session
