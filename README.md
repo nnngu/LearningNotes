@@ -55,6 +55,11 @@ Github：[https://github.com/nnngu](https://github.com/nnngu)
 
 
 
+## Hibernate
+* [01 Hibernate的配置和使用](https://github.com/nnngu/LearningNotes/blob/master/Hibernate/01%20Hibernate%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8.md)
+
+
+
 ## JavaScript
 * [01 用js实现2048小游戏](https://github.com/nnngu/LearningNotes/blob/master/JavaScript/01%20%E7%94%A8js%E5%AE%9E%E7%8E%B02048%E5%B0%8F%E6%B8%B8%E6%88%8F.md)
 
