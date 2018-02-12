@@ -72,7 +72,7 @@ Github：[https://github.com/nnngu](https://github.com/nnngu)
 * [04 (项目) 基于 React + Webpack 的音乐相册（上）](https://github.com/nnngu/LearningNotes/blob/master/React/04%20(%E9%A1%B9%E7%9B%AE)%20%E5%9F%BA%E4%BA%8E%20React%20%2B%20%20Webpack%20%E7%9A%84%E9%9F%B3%E4%B9%90%E7%9B%B8%E5%86%8C%EF%BC%88%E4%B8%8A%EF%BC%89.md)
 * [05 (项目) 基于 React + Webpack 的音乐相册（下）](https://github.com/nnngu/LearningNotes/blob/master/React/05%20(%E9%A1%B9%E7%9B%AE)%20%E5%9F%BA%E4%BA%8E%20React%20%2B%20Webpack%20%E7%9A%84%E9%9F%B3%E4%B9%90%E7%9B%B8%E5%86%8C%EF%BC%88%E4%B8%8B%EF%BC%89.md)
 
-参考：[React中文文档](https://doc.react-china.org/docs/hello-world.html)
+React中文文档：[https://doc.react-china.org/docs/hello-world.html](https://doc.react-china.org/docs/hello-world.html)
 
 
 
