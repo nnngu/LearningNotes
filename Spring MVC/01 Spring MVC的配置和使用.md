@@ -4,3 +4,338 @@
 
 ---
 
+## Spring MVC需要的jar包
+
+文章中 Spring MVC 使用的版本是 3.2.18 ， 需要的 jar 包如下：
+
+```
+spring-webmvc
+jstl 1.1.2
+aopalliance 1.0
+commons-logging 1.1.1
+spring-aop
+spring-beans
+spring-context
+spring-core
+spring-expression
+spring-web
+spring-webmvc
+```
+
+使用 Maven 构建的 Java 项目，需要在 pom.xml 中添加如下依赖：
+
+```xml
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>3.2.18.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>aopalliance</groupId>
+            <artifactId>aopalliance</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>3.2.18.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>3.2.18.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>3.2.18.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>3.2.18.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-expression</artifactId>
+            <version>3.2.18.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>3.2.18.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>3.2.18.RELEASE</version>
+        </dependency>
+```
+
+## 前期准备
+
+1、在`com.nnngu.entity`包下创建 `User.java`
+
+![][1]
+
+代码如下：
+
+```java
+package com.nnngu.entity;
+
+import java.io.Serializable;
+
+public class User implements Serializable {
+    private static final long serialVersionUID = 1L;
+    private String name;
+    private Integer age;
+    private String pwd;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public String getPwd() {
+        return pwd;
+    }
+
+    public void setPwd(String pwd) {
+        this.pwd = pwd;
+    }
+
+}
+
+```
+
+2、在下图所示的位置创建两个 jsp 页面
+
+![][2]
+
+`create.jsp`的代码如下：
+
+```jsp
+<%--
+  Created by IntelliJ IDEA.
+  User: lijiawei
+  Date: 13/02/2018
+  Time: 14:08
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>创建用户</title>
+</head>
+<body>
+<form action="save" method="post">
+    <fieldset>
+        <legend>创建用户</legend>
+        <p>
+            <label>姓名：</label> <input type="text" id="name" name="name"
+                                      tabindex="1">
+        </p>
+        <p>
+            <label>年龄：</label> <input type="text" id="age" name="age"
+                                      tabindex="2">
+        </p>
+        <p>
+            <label>密码：</label> <input type="text" id="pwd" name="pwd"
+                                      tabindex="3">
+        </p>
+        <p id="buttons">
+            <input id="reset" type="reset" tabindex="4" value="重置"> <input
+                id="submit" type="submit" tabindex="5" value="创建">
+        </p>
+    </fieldset>
+</form>
+</body>
+</html>
+
+```
+
+`detail.jsp` 的代码如下：
+
+```jsp
+<%--
+  Created by IntelliJ IDEA.
+  User: lijiawei
+  Date: 13/02/2018
+  Time: 14:08
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>用户详情</title>
+</head>
+<body>
+<div id="gloobal">
+    <h4>创建成功</h4>
+    <p>
+    <h5>详情：</h5>
+    姓名：${user.name}<br/>
+    年龄：${user.age}<br/>
+    密码：${user.pwd}<br/>
+    </p>
+</div>
+</body>
+</html>
+
+```
+
+## 配置Spring MVC
+
+1、在 web.xml 文件中进行如下配置：
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <filter>
+        <description>字符集过滤器</description>
+        <filter-name>encodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <description>字符集编码</description>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>encodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <servlet>
+        <servlet-name>appServlet</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:spring/springmvc-context.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>appServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+</web-app>
+
+```
+
+2、在下图所示的位置创建 `springmvc-context.xml`
+
+![][3]
+
+`springmvc-context.xml`的代码如下：
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:context="http://www.springframework.org/schema/context"
+             xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:p="http://www.springframework.org/schema/p"
+             xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd ">
+
+    <!-- 对包中的所有类进行扫描，以完成Bean创建和自动依赖注入的功能 -->
+    <context:component-scan base-package="com.nnngu"/>
+
+    <!-- 启动基于Spring MVC的注解功能，将控制器与方法映射加入到容器中 -->
+    <mvc:annotation-driven/>
+
+    <!-- 这个类用于Spring MVC视图解析 -->
+    <beans:bean id="viewResolver"
+                class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <beans:property name="prefix" value="/WEB-INF/pages/"/>
+        <beans:property name="suffix" value=".jsp"/>
+    </beans:bean>
+
+</beans:beans>
+```
+
+3、编写 Controller
+
+![][4]
+
+在上图所示的位置创建 `UserController.java` ，代码如下：
+
+```java
+package com.nnngu;
+
+import com.nnngu.entity.User;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+/**
+ * 用户管理
+ */
+@Controller
+public class UserController {
+
+    @RequestMapping("")
+    public String Create(Model model) {
+        return "create";
+    }
+
+    @RequestMapping("/save")
+    public String Save(@ModelAttribute("form") User user, Model model) { // user:视图层传给控制层的表单对象；model：控制层返回给视图层的对象
+        model.addAttribute("user", user);
+        return "detail";
+    }
+}
+
+```
+
+## 测试
+
+启动项目，在浏览器输入 `localhost:8080`
+
+![][5]
+
+![][6]
+
+测试成功。
+
+
+  [1]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/13/1518507826902.jpg
+  [2]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/13/1518507987551.jpg
+  [3]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/13/1518508360657.jpg
+  [4]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/13/1518508581448.jpg
+  [5]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/13/1518508759104.jpg
+  [6]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/13/1518508865608.jpg
