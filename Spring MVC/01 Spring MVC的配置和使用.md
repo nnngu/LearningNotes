@@ -19,7 +19,7 @@ spring-context
 spring-core
 spring-expression
 spring-web
-spring-webmvc
+
 ```
 
 使用 Maven 构建的 Java 项目，需要在 pom.xml 中添加如下依赖：
@@ -75,11 +75,7 @@ spring-webmvc
             <artifactId>spring-web</artifactId>
             <version>3.2.18.RELEASE</version>
         </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-            <version>3.2.18.RELEASE</version>
-        </dependency>
+
 ```
 
 ## 前期准备
