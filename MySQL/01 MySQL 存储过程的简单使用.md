@@ -119,16 +119,94 @@ call select_students_by_likename('%j%');
 
 ### 增加
 
+```sql
+delimiter ;;
+create procedure insert_student(
+    _id int,
+    _name varchar(255),
+    _age int,
+    _city varchar(255)
+)
+    begin
+    	insert into students(id,name,age,city) values(_id,_name,_age,_city);
+    end ;;
+delimiter ;
+```
 
+执行存储过程：
 
+```sql
+call insert_student(5, '张三', 19, '上海');
+```
+
+执行完后，表中多了一条数据，如下图：
+
+![][7]
 
 ### 修改
 
+```sql
+delimiter ;;
+create procedure update_student(
+    _id int,
+    _name varchar(255),
+    _age int,
+    _city varchar(255)
+)
+    begin
+    	update students set name = _name, age = _age, city = _city where id = _id;
+    end ;;
+delimiter ;
+```
 
+执行存储过程：
 
+```sql
+call update_student(5, 'amy', 22, '杭州');
+```
+
+![][8]
 
 ### 删除
 
+```sql
+delimiter ;;
+create procedure delete_student_by_id(
+    _id int
+)
+    begin
+    	delete from students where id=_id;
+    end ;;
+delimiter ;
+```
+
+执行存储过程：
+
+```sql
+call delete_student_by_id(5);
+```
+
+students 表中 id 为5的那条记录成功删除。如下图：
+
+![][9]
+
+## 查询存储过程
+
+**查询所有的存储过程：**
+
+```sql
+select name from mysql.proc where db='数据库名';
+```
+
+![][10]
+
+**查询某个存储过程：**
+
+```sql
+show create procedure 存储过程名;
+```
+
+![][11]
 
 
 
@@ -158,3 +236,8 @@ call select_students_by_likename('%j%');
   [4]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/23/1519382991880.jpg
   [5]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/23/1519384184008.jpg
   [6]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/23/1519385002267.jpg
+  [7]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/23/1519385713796.jpg
+  [8]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/23/1519386216653.jpg
+  [9]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/23/1519386665787.jpg
+  [10]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/23/1519387077267.jpg
+  [11]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/23/1519387338470.jpg
