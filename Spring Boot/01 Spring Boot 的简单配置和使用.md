@@ -40,14 +40,14 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 public class SpringBoot0223Application {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SpringBoot0223Application.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(SpringBoot0223Application.class, args);
+    }
 
-	@RequestMapping(value = "/",produces = "text/plain;charset=UTF-8")
-	String index(){
-		return "第一次使用 Spring Boot!";
-	}
+    @RequestMapping(value = "/", produces = "text/plain;charset=UTF-8")
+    String index() {
+        return "第一次使用 Spring Boot!";
+    }
 }
 
 ```
