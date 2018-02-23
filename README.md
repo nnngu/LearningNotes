@@ -76,7 +76,7 @@ Github：[https://github.com/nnngu](https://github.com/nnngu)
 
 
 ## MySQL
-* [01 存储过程的简单使用](https://github.com/nnngu/LearningNotes/blob/master/MySQL/01%20%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8.md)
+* [01 MySQL 存储过程的简单使用](https://github.com/nnngu/LearningNotes/blob/master/MySQL/01%20MySQL%20%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8.md)
 
 
 
