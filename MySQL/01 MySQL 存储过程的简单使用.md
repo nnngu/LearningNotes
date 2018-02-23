@@ -46,8 +46,6 @@ call select_students_count();
 
 ## 带参数的存储过程
 
-MySQL 支持 in (传递给存储过程)，out (从存储过程传出) 和 inout (对存储过程传入和传出) 类型的参数。存储过程的代码位于 begin 和 end 语句内，它们是一系列 select 语句，用来检索值，然后保存到相应的变量 (通过指定 into 关键字)
-
 ```sql
 -- 根据城市查询总数
 delimiter ;;
@@ -67,6 +65,8 @@ call select_students_by_city_count('上海');
 ![][4]
 
 ## 带有输出参数的存储过程
+
+MySQL 支持 in (传递给存储过程)，out (从存储过程传出) 和 inout (对存储过程传入和传出) 类型的参数。存储过程的代码位于 begin 和 end 语句内，它们是一系列 select 语句，用来检索值，然后保存到相应的变量 (通过指定 into 关键字)
 
 ```sql
 -- 根据姓名查询学生信息，返回学生的城市
