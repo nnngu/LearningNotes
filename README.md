@@ -71,6 +71,9 @@ Github：[https://github.com/nnngu](https://github.com/nnngu)
 * [01 Mybatis 的配置和使用](https://github.com/nnngu/LearningNotes/blob/master/Mybatis/01%20Mybatis%20%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8.md)
 
 
+## Spring Boot
+* [01 Spring Boot 的简单配置和使用](https://github.com/nnngu/LearningNotes/blob/master/Spring%20Boot/01%20Spring%20Boot%20%E7%9A%84%E7%AE%80%E5%8D%95%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8.md)
+
 
 ## JavaScript
 * [01 用js实现2048小游戏](https://github.com/nnngu/LearningNotes/blob/master/JavaScript/01%20%E7%94%A8js%E5%AE%9E%E7%8E%B02048%E5%B0%8F%E6%B8%B8%E6%88%8F.md)
