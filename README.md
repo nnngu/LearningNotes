@@ -49,6 +49,7 @@ Github：[https://github.com/nnngu](https://github.com/nnngu)
 * [015 反射中的 Class.forName() 与 ClassLoader.loadClass() 的区别](https://github.com/nnngu/LearningNotes/blob/master/Java%20Basis/015%20%E5%8F%8D%E5%B0%84%E4%B8%AD%E7%9A%84%20Class.forName()%20%E4%B8%8E%20ClassLoader.loadClass()%20%E7%9A%84%E5%8C%BA%E5%88%AB.md)
 * [016 Java中的动态代理](https://github.com/nnngu/LearningNotes/blob/master/Java%20Basis/016%20Java%E4%B8%AD%E7%9A%84%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86.md)
 * [017 Java中的静态代理、JDK动态代理、cglib动态代理](https://github.com/nnngu/LearningNotes/blob/master/Java%20Basis/017%20Java%E4%B8%AD%E7%9A%84%E9%9D%99%E6%80%81%E4%BB%A3%E7%90%86%E3%80%81JDK%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86%E3%80%81cglib%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86.md)
+* [018 final 关键字的用途](https://github.com/nnngu/LearningNotes/blob/master/Java%20Basis/018%20final%20%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E7%94%A8%E9%80%94.md)
 
 
 
