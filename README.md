@@ -52,6 +52,9 @@ Github：[https://github.com/nnngu](https://github.com/nnngu)
 * [018 final 关键字的用途](https://github.com/nnngu/LearningNotes/blob/master/Java%20Basis/018%20final%20%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E7%94%A8%E9%80%94.md)
 * [019 单例模式的5种写法](https://github.com/nnngu/LearningNotes/blob/master/Java%20Basis/019%20%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F%E7%9A%845%E7%A7%8D%E5%86%99%E6%B3%95.md)
 
+[Java面试题库及答案解析](https://github.com/nnngu/LearningNotes/blob/master/Java%20Basis/Java%E9%9D%A2%E8%AF%95%E9%A2%98%E5%BA%93%E5%8F%8A%E7%AD%94%E6%A1%88%E8%A7%A3%E6%9E%90.md)
+
+
 
 
 ## Struts2
