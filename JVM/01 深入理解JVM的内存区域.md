@@ -79,8 +79,42 @@ public class JVMShowcase {
 }
 ```
 
+这个类没有任何意义，不用猜测这个类是做什么用的，只是写一个比较典型的类，然后我们来看看 JVM 是如何运行的，也就是输入 java JVMShowcase 后，我们来看 JVM 是如何处理的：
+
+* 第 1 步， 向操作系统申请空闲内存。JVM 对操作系统说 “给我 64M（随便模拟数据，并不是真实数据） 空闲内存” ，于是，操作系统就查找自己的内存分配表，找了段 64M 的内存写上 “Java 占用” 标签，然后把内存段的起始地址和终止地址给 JVM， JVM 准备加载类文件。
+
+* 第 2 步，JVM 分配内存。JVM 获得 64M 内存，就开始得瑟了，首先给 Heap 分配内存，然后给 Stack 也分配好。
+
+* 第 3 步，文件检查 和 分析 class 文件。若发现有错误即返回错误。
+
+* 第 4 步，加载类。由于没有指定加载器，JVM 默认使用 bootstrap 加载器，就把 rt.jar 下的所有类都加载，JVMShowcase 也被加载到内存中。我们来看看方法区，如下图：（这时候包含了 main 方法和 runStaticMethod 方法的符号引用，因为它们都是静态方法，在类加载的时候就会加载）
+
+![][2]
+
+此时，Heap 是空，Stack 是空，因为还没有对象的新建和线程被执行。
+
+* 第 5 步，执行方法。执行 main 方法。执行启动一个线程，开始执行 main 方法，在 main 执行完毕前，方法区如下图所示：
+（public final static String ClASS_CONST = "I'm a Const";  ）
+
+![][3]
+
+在 方法区 加入了 CLASS_CONST 常量，它是在第一次被访问时产生的（runStaticMethod方法内部）。
 
 
+Heap 内存中有两个对象 Object 和 showcase 对象，如下图所示：（执行了JVMShowcase showcase = new JVMShowcase();  ）
+
+![][4]
+
+为什么会有 Object 对象呢？因为它是 JVMShowcase 的父类，JVM 是先初始化父类，然后再初始化子类，不管有多少个父类都初始化。
+
+
+在 Stack 内存中有三个栈帧，如下图所示：
+
+![][5]
+
+于此同时，还创建了一个程序计数器指向下一条要执行的语句。
+
+* 第 6 步，释放内存。运行结束，JVM 向操作系统发送消息，说 “内存用完了，我还给你” ，运行结束。
 
 
 
@@ -106,3 +140,7 @@ public class JVMShowcase {
 
 
   [1]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/28/1519799017324.jpg
+  [2]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/28/1519800108931.jpg
+  [3]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/28/1519800303143.jpg
+  [4]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/28/1519800522688.jpg
+  [5]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/28/1519800661395.jpg
