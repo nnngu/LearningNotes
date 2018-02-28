@@ -26,9 +26,9 @@ Class.forName() 与 ClassLoader.loadClass() 大家都知道是反射用来构造
 
  于是乎我们可以开始看2者的区别了。
  
-Class.forName(className) 方法，其实调用的方法是Class.forName(className,true,classloader); 注意看第2个boolean参数，它表示的意思，在加载之后必须初始化。在执行过此方法后，目标对象的静态块代码已经被执行，静态参数也已经被初始化。
+Class.forName(className) 方法，其实调用的方法是`Class.forName(className,true,classloader);` 注意看第2个boolean参数，它表示的意思，在加载之后必须初始化。在执行过此方法后，目标对象的静态块代码已经被执行，静态参数也已经被初始化。
 
-再看ClassLoader.loadClass(className) 方法，其实他调用的方法是ClassLoader.loadClass(className,false); 注意看第2个 boolean 参数，该参数表示目标对象被加载后不进行链接，这就意味着不会去执行该类静态块中的内容。因此两者的区别就显而易见了。
+再看ClassLoader.loadClass(className) 方法，其实他调用的方法是`ClassLoader.loadClass(className,false);` 注意看第2个 boolean 参数，该参数表示目标对象被加载后不进行链接，这就意味着不会去执行该类静态块中的内容。因此两者的区别就显而易见了。
 
 
 
