@@ -56,6 +56,10 @@ Github：[https://github.com/nnngu](https://github.com/nnngu)
 
 
 
+## JVM
+* [01 深入理解JVM的内存区域](https://github.com/nnngu/LearningNotes/blob/master/JVM/01%20%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM%E7%9A%84%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F.md)
+
+
 
 ## Struts2
 * [01 Struts2的配置和一个简单的例子](https://github.com/nnngu/LearningNotes/blob/master/Struts2/01%20Struts2%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E4%BE%8B%E5%AD%90.md)
