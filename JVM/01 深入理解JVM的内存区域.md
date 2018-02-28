@@ -44,7 +44,40 @@ Java 指令由 操作码（方法本身）和 操作数（方法内部变量）�
 
 程序计数器是一块较小的内存区域，作用可以看做是当前线程执行的字节码的位置指示器。分支、循环、跳转、异常处理和线程恢复等基础功能都需要依赖这个计数器来完成。
 
+## JVM 运行例子
 
+我们来写一个简单的类，代码如下：
+
+```java
+public class JVMShowcase {  
+	// 静态类常量
+	public final static String ClASS_CONST = "I'm a Const";  
+
+	// 私有实例变量  
+	private int instanceVar = 15;  
+
+	public static void main(String[] args) {  
+
+		// 调用静态方法  
+		runStaticMethod();  
+
+		// 调用非静态方法  
+		JVMShowcase showcase = new JVMShowcase();  
+		showcase.runNonStaticMethod(100);  
+	}  
+
+	// 常规静态方法  
+	public static String runStaticMethod() {  
+		return ClASS_CONST;  
+	}  
+
+	// 非静态方法  
+	public int runNonStaticMethod(int parameter) {  
+		int methodVar = this.instanceVar * parameter;  
+		return methodVar;  
+	}  
+}
+```
 
 
 
