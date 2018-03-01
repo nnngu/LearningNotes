@@ -322,6 +322,18 @@ Java中有两种异常：受检查的(checked)异常和不受检查的(unchecked
 
 Exception和Error都是Throwable的子类。Exception用于用户程序可以捕获的异常情况。Error定义了不期望被用户程序捕获的异常。
 
+---
+
+## 47、Java 为什么是高效的 ( High Performance )？
+
+因为 Java 使用 Just-In-Time (即时) 编译器。
+
+把Java字节码转换成可以直接发送给处理器的指令。
+
+
+
+
+
 
 
 
