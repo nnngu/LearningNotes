@@ -153,26 +153,189 @@ public class TimeHandler
         http://www.springframework.org/schema/aop
         http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
         
-        <bean id="helloWorldImpl1" class="com.xrq.aop.HelloWorldImpl1" />
-        <bean id="helloWorldImpl2" class="com.xrq.aop.HelloWorldImpl2" />
-        <bean id="timeHandler" class="com.xrq.aop.TimeHandler" />
+        <bean id="helloWorldImpl1" class="com.nnngu.aop.HelloWorldImpl1" />
+        <bean id="helloWorldImpl2" class="com.nnngu.aop.HelloWorldImpl2" />
+        <bean id="timeHandler" class="com.nnngu.aop.TimeHandler" />
         
         <aop:config>
             <aop:aspect id="time" ref="timeHandler">
-                <aop:pointcut id="addAllMethod" expression="execution(* com.xrq.aop.HelloWorld.*(..))" />
-                <aop:before method="printTime" pointcut-ref="addAllMethod" />
-                <aop:after method="printTime" pointcut-ref="addAllMethod" />
+                <aop:pointcut id="addTime" expression="execution(* com.nnngu.aop.HelloWorld.*(..))" />
+                <aop:before method="printTime" pointcut-ref="addTime" />
+                <aop:after method="printTime" pointcut-ref="addTime" />
             </aop:aspect>
         </aop:config>
 </beans>
 ```
 
+写一个main函数调用一下：
 
+```java
+public static void main(String[] args)
+{
+    ApplicationContext ctx = 
+            new ClassPathXmlApplicationContext("aop.xml");
+        
+    HelloWorld hw1 = (HelloWorld)ctx.getBean("helloWorldImpl1");
+    HelloWorld hw2 = (HelloWorld)ctx.getBean("helloWorldImpl2");
+    hw1.printHelloWorld();
+    System.out.println(); // 换行
+    hw1.doPrint();
+    
+    System.out.println(); // 换行
+    hw2.printHelloWorld();
+    System.out.println(); // 换行
+    hw2.doPrint();
+}
+```
 
+运行结果为：
 
+```
+CurrentTime = 1446129611993
+Enter HelloWorldImpl1.printHelloWorld()
+CurrentTime = 1446129611993
 
+CurrentTime = 1446129611994
+Enter HelloWorldImpl1.doPrint()
+CurrentTime = 1446129611994
 
+CurrentTime = 1446129611994
+Enter HelloWorldImpl2.printHelloWorld()
+CurrentTime = 1446129611994
 
+CurrentTime = 1446129611994
+Enter HelloWorldImpl2.doPrint()
+CurrentTime = 1446129611994
+```
+
+可以看到给HelloWorld接口的两个实现类的所有方法都加上了代理，代理内容就是打印时间。
+
+## 5、基于Spring的AOP使用其他细节
+
+### 5-1、增加一个横切关注点，打印日志，Java类为：
+
+```java
+public class LogHandler
+{
+    public void LogBefore()
+    {
+        System.out.println("Log before method");
+    }
+    
+    public void LogAfter()
+    {
+        System.out.println("Log after method");
+    }
+}
+```
+
+aop.xml配置为：
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
+        
+        <bean id="helloWorldImpl1" class="com.nnngu.aop.HelloWorldImpl1" />
+        <bean id="helloWorldImpl2" class="com.nnngu.aop.HelloWorldImpl2" />
+        <bean id="timeHandler" class="com.nnngu.aop.TimeHandler" />
+        <bean id="logHandler" class="com.nnngu.aop.LogHandler" />
+        
+        <aop:config>
+            <aop:aspect id="time" ref="timeHandler" order="1">
+                <aop:pointcut id="addTime" expression="execution(* com.nnngu.aop.HelloWorld.*(..))" />
+                <aop:before method="printTime" pointcut-ref="addTime" />
+                <aop:after method="printTime" pointcut-ref="addTime" />
+            </aop:aspect>
+            <aop:aspect id="log" ref="logHandler" order="2">
+                <aop:pointcut id="printLog" expression="execution(* com.nnngu.aop.HelloWorld.*(..))" />
+                <aop:before method="LogBefore" pointcut-ref="printLog" />
+                <aop:after method="LogAfter" pointcut-ref="printLog" />
+            </aop:aspect>
+        </aop:config>
+</beans>
+```
+
+测试类不变，打印结果为：
+
+```
+CurrentTime = 1446130273734
+Log before method
+Enter HelloWorldImpl1.printHelloWorld()
+Log after method
+CurrentTime = 1446130273735
+
+CurrentTime = 1446130273736
+Log before method
+Enter HelloWorldImpl1.doPrint()
+Log after method
+CurrentTime = 1446130273736
+
+CurrentTime = 1446130273736
+Log before method
+Enter HelloWorldImpl2.printHelloWorld()
+Log after method
+CurrentTime = 1446130273736
+
+CurrentTime = 1446130273737
+Log before method
+Enter HelloWorldImpl2.doPrint()
+Log after method
+CurrentTime = 1446130273737
+```
+
+要想让logHandler在timeHandler前使用有两个办法：
+
+（1）aspect里面有一个order属性，order属性的数字就是横切关注点的顺序
+
+（2）在aop.xml里，把logHandler定义在timeHandler前面，Spring默认以aspect的定义顺序作为织入顺序
+
+### 5-2、我只想织入接口中的某些方法
+
+修改一下pointcut的expression就好了：
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
+        
+        <bean id="helloWorldImpl1" class="com.nnngu.aop.HelloWorldImpl1" />
+        <bean id="helloWorldImpl2" class="com.nnngu.aop.HelloWorldImpl2" />
+        <bean id="timeHandler" class="com.nnngu.aop.TimeHandler" />
+        <bean id="logHandler" class="com.nnngu.aop.LogHandler" />
+        
+        <aop:config>
+            <aop:aspect id="time" ref="timeHandler" order="1">
+                <aop:pointcut id="addTime" expression="execution(* com.nnngu.aop.HelloWorld.print*(..))" />
+                <aop:before method="printTime" pointcut-ref="addTime" />
+                <aop:after method="printTime" pointcut-ref="addTime" />
+            </aop:aspect>
+            <aop:aspect id="log" ref="logHandler" order="2">
+                <aop:pointcut id="printLog" expression="execution(* com.nnngu.aop.HelloWorld.do*(..))" />
+                <aop:before method="LogBefore" pointcut-ref="printLog" />
+                <aop:after method="LogAfter" pointcut-ref="printLog" />
+            </aop:aspect>
+        </aop:config>
+</beans>
+```
+
+以上的修改，表示timeHandler只会织入HelloWorld接口print开头的方法，logHandler只会织入HelloWorld接口do开头的方法
+
+### 5-3、强制使用CGLIB生成代理
+
+前面说过Spring使用JDK动态代理或是CGLIB生成代理是有规则的，高版本的Spring会自动选择是使用JDK动态代理还是CGLIB生成代理内容，当然我们也可以强制使用CGLIB生成代理，那就是<aop:config>里面有一个"proxy-target-class"属性，这个属性值如果被设置为true，那么基于类的代理将起作用，如果proxy-target-class被设置为false或者这个属性被省略，那么基于接口的代理将起作用。
 
 
 
