@@ -44,7 +44,7 @@ AOP技术恰恰相反，它利用一种称为"横切"的技术，剖解开封装
 
 ## 3、Spring对AOP的支持
 
-Spring中AOP代理由Spring的IOC容器负责生成、管理，其依赖关系也由IOC容器负责管理。因此，AOP代理可以直接使用容器中的其它bean实例作为目标，这种关系可由IOC容器的依赖注入提供。Spring创建代理的规则为：
+Spring中AOP代理由Spring的IoC容器负责生成、管理，其依赖关系也由IoC容器负责管理。因此，AOP代理可以直接使用容器中的其它bean实例作为目标，这种关系可由IoC容器的依赖注入提供。Spring创建代理的规则为：
 
 1、默认使用Java动态代理来创建AOP代理，这样就可以为任何接口实例创建代理了
 
@@ -59,6 +59,76 @@ AOP编程其实是很简单的事情，纵观AOP编程，程序员只需要参�
 3、定义增强处理，增强处理就是在AOP框架为普通业务组件织入的处理动作
 
 所以进行AOP编程的关键就是定义切入点和定义增强处理，一旦定义了合适的切入点和增强处理，AOP框架将自动生成AOP代理，即：代理对象的方法=增强处理+被代理对象的方法。
+
+下面给出一个Spring AOP的.xml文件模板，名字叫做aop.xml，之后的内容都在aop.xml上进行扩展：
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
+            
+</beans>
+```
+
+## 4、基于Spring的AOP简单实现
+
+在讲解之前，说明一点：使用Spring AOP，要成功运行代码，只用Spring提供给开发者的jar包是不够的，请额外上网下载两个jar包：
+
+1、aopalliance.jar
+
+2、aspectjweaver.jar
+
+开始讲解用Spring AOP的XML实现方式，先定义一个接口：
+
+```java
+public interface HelloWorld
+{
+    void printHelloWorld();
+    void doPrint();
+}
+```
+
+定义两个接口实现类：
+
+```java
+public class HelloWorldImpl1 implements HelloWorld
+{
+    public void printHelloWorld()
+    {
+        System.out.println("Enter HelloWorldImpl1.printHelloWorld()");
+    }
+    
+    public void doPrint()
+    {
+        System.out.println("Enter HelloWorldImpl1.doPrint()");
+        return ;
+    }
+}
+```
+
+```java
+public class HelloWorldImpl2 implements HelloWorld
+{
+    public void printHelloWorld()
+    {
+        System.out.println("Enter HelloWorldImpl2.printHelloWorld()");
+    }
+    
+    public void doPrint()
+    {
+        System.out.println("Enter HelloWorldImpl2.doPrint()");
+        return ;
+    }
+}
+```
+
+
 
 
 
