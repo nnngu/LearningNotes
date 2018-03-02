@@ -128,6 +128,45 @@ public class HelloWorldImpl2 implements HelloWorld
 }
 ```
 
+横切关注点，这里是打印时间：
+
+```java
+public class TimeHandler
+{
+    public void printTime()
+    {
+        System.out.println("CurrentTime = " + System.currentTimeMillis());
+    }
+}
+```
+
+有这三个类就可以实现一个简单的Spring AOP了，看一下aop.xml的配置：
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
+        
+        <bean id="helloWorldImpl1" class="com.xrq.aop.HelloWorldImpl1" />
+        <bean id="helloWorldImpl2" class="com.xrq.aop.HelloWorldImpl2" />
+        <bean id="timeHandler" class="com.xrq.aop.TimeHandler" />
+        
+        <aop:config>
+            <aop:aspect id="time" ref="timeHandler">
+                <aop:pointcut id="addAllMethod" expression="execution(* com.xrq.aop.HelloWorld.*(..))" />
+                <aop:before method="printTime" pointcut-ref="addAllMethod" />
+                <aop:after method="printTime" pointcut-ref="addAllMethod" />
+            </aop:aspect>
+        </aop:config>
+</beans>
+```
+
 
 
 
