@@ -10,7 +10,7 @@
 <context:component-scan base-package="com.nnngu" />
 ```
 
-从Spring提供的参考手册中我们得知该配置的功能是扫描配置的base-package包下的所有使用了@Component注解的类，并且将它们自动注册到容器中，同时也扫描@Controller，@Service，@Respository这三个注解，因为他们是继承自@Component。
+从Spring提供的参考手册中我们得知该配置的功能是扫描配置的base-package包下的所有使用了\@Component注解的类，并且将它们自动注册到容器中，同时也扫描\@Controller，\@Service，\@Respository这三个注解，因为他们是继承自\@Component。
 
 在项目中我们经常见到还有如下这个配置，其实有了上面的配置，这个是可以省略掉的，因为上面的配置会默认打开以下配置。以下配置会默认声明了@Required、@Autowired、 @PostConstruct、@PersistenceContext、@Resource、@PreDestroy等注解。
 
