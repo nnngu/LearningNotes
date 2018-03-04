@@ -74,6 +74,7 @@ Github：[https://github.com/nnngu](https://github.com/nnngu)
 ## Spring
 * [01 Spring的简单配置和使用](https://github.com/nnngu/LearningNotes/blob/master/Spring/01%20Spring%E7%9A%84%E7%AE%80%E5%8D%95%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8.md)
 * [02 Spring的AOP（面向切面编程）](https://github.com/nnngu/LearningNotes/blob/master/Spring/02%20Spring%E7%9A%84AOP%EF%BC%88%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%BC%96%E7%A8%8B%EF%BC%89.md)
+* [03 Spring的父子容器](https://github.com/nnngu/LearningNotes/blob/master/Spring/03%20Spring%E7%9A%84%E7%88%B6%E5%AD%90%E5%AE%B9%E5%99%A8.md)
 
 
 ## Spring MVC
