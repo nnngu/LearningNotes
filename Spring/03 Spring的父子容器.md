@@ -28,17 +28,43 @@
 
 我们共有Spring和SpringMVC两个容器，它们的配置文件分别为applicationContext.xml和applicationContext-MVC.xml。
 
-1. 在applicationContext.xml中配置了<context:component-scan base-package=“com.hafiz.www" />，负责所有需要注册的Bean的扫描和注册工作。
+1. 在applicationContext.xml中配置了<context:component-scan base-package=“com.nnngu" />，负责所有需要注册的Bean的扫描和注册工作。
 
 2. 在applicationContext-MVC.xml中配置<mvc:annotation-driven />，负责SpringMVC相关注解的使用。
 
 3. 启动项目我们发现SpringMVC无法进行跳转，将log的日志打印级别设置为DEBUG进行调试，发现SpringMVC容器中的请求好像没有映射到具体controller中。
 
-4. 在applicationContext-MVC.xml中配置<context:component-scan base-package=“com.hafiz.www" />，重启后，验证成功，springMVC跳转有效。
+4. 在applicationContext-MVC.xml中配置<context:component-scan base-package=“com.nnngu" />，重启后，验证成功，springMVC跳转有效。
 
-下面我们来查看具体原因，翻看源码，从SpringMVC的DispatcherServlet开始往下找，我们发现SpringMVC初始化时，会寻找SpringMVC容器中的所有使用了@Controller注解的Bean，来确定其是否是一个handler。1,2两步的配置使得当前springMVC容器中并没有注册带有@Controller注解的Bean，而是把所有带有@Controller注解的Bean都注册在Spring这个父容器中了，所以springMVC找不到处理器，不能进行跳转。核心源码如下:
+下面我们来查看具体原因，翻看源码，从SpringMVC的DispatcherServlet开始往下找，我们发现SpringMVC初始化时，会寻找SpringMVC容器中的所有使用了@Controller注解的Bean，来确定其是否是一个handler。1,2两步的配置使得当前springMVC容器中并没有注册带有@Controller注解的Bean，而是把所有带有@Controller注解的Bean都注册在Spring这个父容器中了，所以springMVC找不到处理器，不能进行跳转。
 
+而在第4步配置中，SpringMVC容器中也注册了所有带有@Controller注解的Bean，故SpringMVC能找到处理器进行处理，从而正常跳转。
 
+## 3、官方推荐配置
+
+在实际工程中会包括很多配置，我们按照官方推荐根据不同的业务模块来划分不同容器中注册不同类型的Bean：Spring父容器负责所有其他非@Controller注解的Bean的注册，而SpringMVC只负责@Controller注解的Bean的注册，使得他们各负其责、明确边界。配置方式如下：
+
+1. 在applicationContext.xml中配置:
+
+```xml
+<!-- Spring容器中注册非@Controller注解的Bean -->
+<context:component-scan base-package="com.nnngu">
+   <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+</context:component-scan>
+```
+
+2. applicationContext-MVC.xml中配置
+
+```xml
+<!-- SpringMVC容器中只注册带有@Controller注解的Bean -->
+<context:component-scan base-package="com.nnngu" use-default-filters="false">
+   <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+</context:component-scan>
+```
+
+## 4、总结
+
+我们在清楚了Spring和SpringMVC的父子容器关系、以及扫描注册的原理以后，根据官方建议，就可以很好把不同类型的Bean分配到不同的容器中进行管理。出现Bean找不到或者SpringMVC不能跳转以及事务的配置失效的问题时，我们就可以很快的定位以及解决问题了。
 
 
 
