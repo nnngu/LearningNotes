@@ -24,7 +24,19 @@
 <mvc:annotation-driven />
 ```
 
+## 2、使用场景分析
 
+我们共有Spring和SpringMVC两个容器，它们的配置文件分别为applicationContext.xml和applicationContext-MVC.xml。
+
+1. 在applicationContext.xml中配置了<context:component-scan base-package=“com.hafiz.www" />，负责所有需要注册的Bean的扫描和注册工作。
+
+2. 在applicationContext-MVC.xml中配置<mvc:annotation-driven />，负责SpringMVC相关注解的使用。
+
+3. 启动项目我们发现SpringMVC无法进行跳转，将log的日志打印级别设置为DEBUG进行调试，发现SpringMVC容器中的请求好像没有映射到具体controller中。
+
+4. 在applicationContext-MVC.xml中配置<context:component-scan base-package=“com.hafiz.www" />，重启后，验证成功，springMVC跳转有效。
+
+下面我们来查看具体原因，翻看源码，从SpringMVC的DispatcherServlet开始往下找，我们发现SpringMVC初始化时，会寻找SpringMVC容器中的所有使用了@Controller注解的Bean，来确定其是否是一个handler。1,2两步的配置使得当前springMVC容器中并没有注册带有@Controller注解的Bean，而是把所有带有@Controller注解的Bean都注册在Spring这个父容器中了，所以springMVC找不到处理器，不能进行跳转。核心源码如下:
 
 
 
