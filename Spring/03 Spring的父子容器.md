@@ -12,13 +12,13 @@
 
 从Spring提供的参考手册中我们得知该配置的功能是扫描配置的base-package包下的所有使用了\@Component注解的类，并且将它们自动注册到容器中，同时也扫描\@Controller，\@Service，\@Respository这三个注解，因为他们是继承自\@Component。
 
-在项目中我们经常见到还有如下这个配置，其实有了上面的配置，这个是可以省略掉的，因为上面的配置会默认打开以下配置。以下配置会默认声明了@Required、@Autowired、 @PostConstruct、@PersistenceContext、@Resource、@PreDestroy等注解。
+在项目中我们经常见到还有如下这个配置，其实有了上面的配置，这个是可以省略掉的，因为上面的配置会默认打开以下配置。以下配置会默认声明了\@Required、\@Autowired、 \@PostConstruct、\@PersistenceContext、\@Resource、\@PreDestroy等注解。
 
 ```xml
 <context:annotation-config/>
 ```
 
-另外，还有一个和SpringMVC相关如下配置，经过验证，这个是SpringMVC必须要配置的，因为它声明了@RequestMapping、@RequestBody、@ResponseBody等。并且，该配置默认加载很多的参数绑定方法，比如json转换解析器等。
+另外，还有一个和SpringMVC相关如下配置，经过验证，这个是SpringMVC必须要配置的，因为它声明了\@RequestMapping、\@RequestBody、\@ResponseBody等。并且，该配置默认加载很多的参数绑定方法，比如json转换解析器等。
 
 ```xml
 <mvc:annotation-driven />
@@ -36,13 +36,13 @@
 
 4. 在applicationContext-MVC.xml中配置<context:component-scan base-package=“com.nnngu" />，重启后，验证成功，springMVC跳转有效。
 
-下面我们来查看具体原因，翻看源码，从SpringMVC的DispatcherServlet开始往下找，我们发现SpringMVC初始化时，会寻找SpringMVC容器中的所有使用了@Controller注解的Bean，来确定其是否是一个handler。1,2两步的配置使得当前springMVC容器中并没有注册带有@Controller注解的Bean，而是把所有带有@Controller注解的Bean都注册在Spring这个父容器中了，所以springMVC找不到处理器，不能进行跳转。
+下面我们来查看具体原因，翻看源码，从SpringMVC的DispatcherServlet开始往下找，我们发现SpringMVC初始化时，会寻找SpringMVC容器中的所有使用了\@Controller注解的Bean，来确定其是否是一个handler。1,2两步的配置使得当前springMVC容器中并没有注册带有\@Controller注解的Bean，而是把所有带有\@Controller注解的Bean都注册在Spring这个父容器中了，所以springMVC找不到处理器，不能进行跳转。
 
-而在第4步配置中，SpringMVC容器中也注册了所有带有@Controller注解的Bean，故SpringMVC能找到处理器进行处理，从而正常跳转。
+而在第4步配置中，SpringMVC容器中也注册了所有带有\@Controller注解的Bean，故SpringMVC能找到处理器进行处理，从而正常跳转。
 
 ## 3、官方推荐配置
 
-在实际工程中会包括很多配置，我们按照官方推荐根据不同的业务模块来划分不同容器中注册不同类型的Bean：Spring父容器负责所有其他非@Controller注解的Bean的注册，而SpringMVC只负责@Controller注解的Bean的注册，使得他们各负其责、明确边界。配置方式如下：
+在实际工程中会包括很多配置，我们按照官方推荐根据不同的业务模块来划分不同容器中注册不同类型的Bean：Spring父容器负责所有其他非\@Controller注解的Bean的注册，而SpringMVC只负责\@Controller注解的Bean的注册，使得他们各负其责、明确边界。配置方式如下：
 
 1. 在applicationContext.xml中配置:
 
