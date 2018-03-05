@@ -2,7 +2,7 @@
 
 ## 1、逆向工程的作用
 
-Mybatis 官方提供了逆向工程，可以针对数据库表自动生成Mybatis执行所需要的代码（包括mapper.xml、mapper.java、pojo）。
+Mybatis 官方提供了逆向工程，可以针对数据库表自动生成Mybatis执行所需要的代码（包括mapper.xml、Mapper.java、pojo）。
 
 ## 2、逆向工程的使用方法
 
@@ -142,7 +142,7 @@ public class GeneratorSqlmap {
 
 ![][3]
 
-
+大功告成！把这些自动生成的代码复制到我们真正的项目中即可。
 
 
 
