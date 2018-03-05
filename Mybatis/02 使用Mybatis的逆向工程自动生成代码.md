@@ -10,7 +10,7 @@ Mybatis 官方提供了逆向工程，可以针对数据库表自动生成Mybati
 
 ![][1]
 
-可以直接下载我Github上面的源代码（[https://github.com/nnngu/generatorSqlmapCustom](https://github.com/nnngu/generatorSqlmapCustom) ），在 lib 目录下已经添加了需要的 jar 包。
+也可以直接下载我Github上面的源代码（[https://github.com/nnngu/generatorSqlmapCustom](https://github.com/nnngu/generatorSqlmapCustom) ），在 lib 目录下已经添加了需要的 jar 包。
 
 
 
