@@ -233,7 +233,7 @@ public class CarFactory
 
 1、删除其中一个实现类，Spring会自动去base-package下寻找Car接口的实现类，发现Car接口只有一个实现类，便会直接引用这个实现类。
 
-2、实现类就是有多个该怎么办？此时可以使用@Qualifier注解：
+2、实现类就是有多个该怎么办？此时可以使用`@Qualifier`注解：
 
 ```java
 
