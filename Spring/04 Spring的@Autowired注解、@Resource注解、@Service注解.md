@@ -130,7 +130,7 @@ public class Zoo
 
 注意上面代码中的`<context:component-scan base-package="com.nnngu" />` ，作用是告诉Spring我要使用注解了，Spring会自动扫描`com.nnngu`路径下的注解。
 
-之前`zoo`里面应当注入两个属性`tiger`、`monkey`，现在不需要注入了。再看一下 `Zoo.java` 也很方便，把`getter/setter` 都可以去掉：
+之前`zoo`里面应当注入的两个属性`tiger`、`monkey`，现在不需要注入了。再看一下 `Zoo.java` 也很方便，把`getter/setter` 都可以去掉：
 
 ```java
 public class Zoo
