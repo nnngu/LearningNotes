@@ -150,7 +150,7 @@ public class Zoo
 
 上面代码中`@Autowired`注解的意思是，当Spring发现`@Autowired`注解时，将自动在代码上下文中找到和其匹配（默认是类型匹配）的Bean，并自动注入到相应的地方去。
 
-（有一个细节性的问题是，假如配置文件的bean里面有两个property，`Zoo.java`里面又去掉了属性的`getter/setter`并使用`@Autowired`注解标注这两个属性那会怎么样？答案是Spring会按照xml优先的原则去`Zoo.java`中寻找这两个属性的`getter/setter`，导致的结果就是初始化bean报错。）
+（*有一个细节性的问题是，假如配置文件的bean里面有两个property，`Zoo.java`里面又去掉了属性的`getter/setter`并使用`@Autowired`注解标注这两个属性那会怎么样？答案是Spring会按照xml优先的原则去`Zoo.java`中寻找这两个属性的`getter/setter`，导致的结果就是初始化bean报错。*）
 
 此时如果我把`.xml`文件的`<bean id="tiger" class="com.nnngu.domain.Tiger" />`和`<bean id="monkey" class="com.nnngu.domain.Monkey" />` 去掉，再运行，会抛出如下异常：
 
