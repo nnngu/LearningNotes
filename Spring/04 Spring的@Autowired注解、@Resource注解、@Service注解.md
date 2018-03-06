@@ -192,7 +192,7 @@ public interface Car
 两个实现类BMW和Benz：
 
 ```java
-@Service
+
 public class BMW implements Car
 {
     public String carName()
@@ -203,7 +203,7 @@ public class BMW implements Car
 ```
 
 ```java
-@Service
+
 public class Benz implements Car
 {
     public String carName()
@@ -216,7 +216,7 @@ public class Benz implements Car
 写一个CarFactory，引用Car：
 
 ```java
-@Service
+
 public class CarFactory
 {
     @Autowired
@@ -236,7 +236,7 @@ public class CarFactory
 2、实现类就是有多个该怎么办？此时可以使用@Qualifier注解：
 
 ```java
-@Service
+
 public class CarFactory
 {
     @Autowired
@@ -257,7 +257,7 @@ public class CarFactory
 把`@Resource`注解放在`@Autowired`下面说，是因为它们的作用非常相似。先看一下`@Resource`，直接在`Zoo.java`中写：
 
 ```java
-@Service
+
 public class Zoo
 {
     @Resource(name = "tiger")
