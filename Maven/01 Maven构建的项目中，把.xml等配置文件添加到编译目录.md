@@ -1,6 +1,23 @@
 # 01 Maven构建的项目中，把.xml等配置文件添加到编译目录
 
+Maven构建的项目，默认只会把`src/main/resources`目录下的xml配置文件添加到编译目录。
 
+如果需要把`src/main/java`目录下的xml配置文件也添加到编译目录，需要在`pom.xml`中添加如下配置：
+
+```xml
+<build>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
+    </build>
+```
 
 
 
