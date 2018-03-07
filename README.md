@@ -91,6 +91,10 @@ Github：[https://github.com/nnngu](https://github.com/nnngu)
 * [01 Spring Boot 的简单配置和使用](https://github.com/nnngu/LearningNotes/blob/master/Spring%20Boot/01%20Spring%20Boot%20%E7%9A%84%E7%AE%80%E5%8D%95%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8.md)
 
 
+## Maven
+* [01 Maven构建的项目中，把.xml等配置文件添加到编译目录](https://github.com/nnngu/LearningNotes/blob/master/Maven/01%20Maven%E6%9E%84%E5%BB%BA%E7%9A%84%E9%A1%B9%E7%9B%AE%E4%B8%AD%EF%BC%8C%E6%8A%8A.xml%E7%AD%89%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%B7%BB%E5%8A%A0%E5%88%B0%E7%BC%96%E8%AF%91%E7%9B%AE%E5%BD%95.md)
+
+
 ## MySQL
 * [01 MySQL 存储过程的简单使用](https://github.com/nnngu/LearningNotes/blob/master/MySQL/01%20MySQL%20%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8.md)
 
