@@ -1,4 +1,7 @@
-# Java中ArrayList与LinkedList的区别
+---
+categories: JavaBasis
+description: 一般大家都知道ArrayList和LinkedList的区别：
+---
 
 笔记仓库：[https://github.com/nnngu/LearningNotes](https://github.com/nnngu/LearningNotes)    
 
