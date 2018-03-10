@@ -1,7 +1,6 @@
-# 05 (项目) 基于 React + Webpack 的音乐相册（下）
-
-笔记仓库：[https://github.com/nnngu/LearningNotes](https://github.com/nnngu/LearningNotes)    
-
+---
+categories: React
+description: 在`src/data`目录添加音乐数据文件：`musicDatas.js`
 ---
 
 [上一篇完成了音乐相册里面的相册功能](https://github.com/nnngu/LearningNotes/blob/master/React/04%20(%E9%A1%B9%E7%9B%AE)%20%E5%9F%BA%E4%BA%8E%20React%20%2B%20%20Webpack%20%E7%9A%84%E9%9F%B3%E4%B9%90%E7%9B%B8%E5%86%8C%EF%BC%88%E4%B8%8A%EF%BC%89.md)，这一篇主要总结的是音乐相册里面的音乐播放器功能。
