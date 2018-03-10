@@ -1,9 +1,6 @@
 # LearningNotes
 ![](https://raw.githubusercontent.com/nnngu/FigureBed/master/2018/1/29/001.jpeg)
 
-Github：[https://github.com/nnngu](https://github.com/nnngu)  
-笔记仓库：[https://github.com/nnngu/LearningNotes](https://github.com/nnngu/LearningNotes)    
-
 --- 
 
 👉 **本页面是1.0版。全新2.0版请点击链接：** [https://nnngu.github.io/LearningNotes/](https://nnngu.github.io/LearningNotes/)
