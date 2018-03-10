@@ -6,9 +6,9 @@ Github：[https://github.com/nnngu](https://github.com/nnngu)
 
 --- 
 
-👉 **本页面为1.0版。全新2.0版请点击链接：** [https://nnngu.github.io/LearningNotes/](https://nnngu.github.io/LearningNotes/)
+👉 **本页面是1.0版。全新2.0版请点击链接：** [https://nnngu.github.io/LearningNotes/](https://nnngu.github.io/LearningNotes/)
 
-👉 **本页面为1.0版。全新2.0版请点击链接：** [https://nnngu.github.io/LearningNotes/](https://nnngu.github.io/LearningNotes/)
+👉 **本页面是1.0版。全新2.0版请点击链接：** [https://nnngu.github.io/LearningNotes/](https://nnngu.github.io/LearningNotes/)
 
 ## Algorithm
 * [算法01 七大排序之：冒泡排序和快速排序](https://github.com/nnngu/LearningNotes/blob/master/Algorithm/%E7%AE%97%E6%B3%9501%20%E4%B8%83%E5%A4%A7%E6%8E%92%E5%BA%8F%E4%B9%8B%EF%BC%9A%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E5%92%8C%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F.md)
@@ -139,8 +139,8 @@ React中文文档：[https://doc.react-china.org/docs/hello-world.html](https://
 * [03 百度搜索 “Java面试题” 前200页（含答案）](https://github.com/nnngu/LearningNotes/blob/master/Interview/03%20%E7%99%BE%E5%BA%A6%E6%90%9C%E7%B4%A2%20%E2%80%9CJava%E9%9D%A2%E8%AF%95%E9%A2%98%E2%80%9D%20%E5%89%8D200%E9%A1%B5%EF%BC%88%E5%90%AB%E7%AD%94%E6%A1%88%EF%BC%89.md)
  
  
- 👉 **本页面为1.0版。全新2.0版请点击链接：** [https://nnngu.github.io/LearningNotes/](https://nnngu.github.io/LearningNotes/)
+ 👉 **本页面是1.0版。全新2.0版请点击链接：** [https://nnngu.github.io/LearningNotes/](https://nnngu.github.io/LearningNotes/)
  
- 👉 **本页面为1.0版。全新2.0版请点击链接：** [https://nnngu.github.io/LearningNotes/](https://nnngu.github.io/LearningNotes/)
+ 👉 **本页面是1.0版。全新2.0版请点击链接：** [https://nnngu.github.io/LearningNotes/](https://nnngu.github.io/LearningNotes/)
  
  
