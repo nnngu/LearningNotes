@@ -43,7 +43,7 @@ Java被设计成允许应用程序可以运行在任意的平台，而不需要�
 
 JRE(Java运行时环境) 是将要执行Java程序的Java虚拟机。它同时也包含了执行applet需要的浏览器插件。JDK(Java开发工具包) 是完整的Java软件开发包，包含了JRE，编译器和其他的工具(比如：JavaDoc，Java调试器)，可以让开发者 开发、编译、执行Java应用程序。
 
-## 5、”static”关键字是什么意思？Java中是否可以覆盖(override) 一个private或者是static的方法？
+## 5、“static”关键字是什么意思？Java中是否可以覆盖(override) 一个private或者是static的方法？
 
 “static”关键字表明一个成员变量或者是成员方法可以在没有所属的类的实例的情况下被访问。
 
