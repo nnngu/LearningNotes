@@ -1,4 +1,7 @@
-# Java中String、StringBuffer、StringBuilder的区别
+---
+categories: JavaBasis
+description: 1.从是否可变的角度
+---
 
 笔记仓库：[https://github.com/nnngu/LearningNotes](https://github.com/nnngu/LearningNotes)    
 
