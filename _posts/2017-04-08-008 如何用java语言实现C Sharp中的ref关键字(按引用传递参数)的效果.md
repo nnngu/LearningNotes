@@ -1,4 +1,7 @@
-# 如何用java语言实现C#中的ref关键字(按引用传递参数)的效果
+---
+categories: JavaBasis
+description: java语言如何实现C#中ref关键字(按引用传递参数)的效果呢？
+---
 
 笔记仓库：[https://github.com/nnngu/LearningNotes](https://github.com/nnngu/LearningNotes)    
 
