@@ -1,4 +1,7 @@
-# 04 Spring的@Autowired注解、@Resource注解、@Service注解
+---
+categories: Spring
+description: 传统的`Spring`做法是使用`.xml`文件来对`bean`进行注入或者是配置`aop`、事务，这么做有两个缺点：
+---
 
 ## 什么是注解
 
