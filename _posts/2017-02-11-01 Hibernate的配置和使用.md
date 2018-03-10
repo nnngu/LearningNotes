@@ -1,0 +1,480 @@
+# 01 Hibernate的配置和使用
+
+笔记仓库：[https://github.com/nnngu/LearningNotes](https://github.com/nnngu/LearningNotes)    
+
+---
+
+## Hibernate 介绍
+
+Hibernate 是一个基于 jdbc 的开源的持久化框架，是一个优秀的 ORM 实现，它很大程度的简化了 dao 层的编码工作。
+
+Hibernate 对 JDBC 访问数据库的代码做了封装，大大简化了数据访问层繁琐的重复性代码。 
+
+Hibernate 在分层结构中处于持久化层，封装对数据库的访问细节，使程序员更专注于实现业务逻辑。
+
+## Hibernate 的体系结构
+
+![][1]
+
+## Hibernate 的开发步骤
+
+1. 创建持久化类
+2. 创建 对象-关系 映射文件  （ \*.hbm.xml ）
+3. 创建 Hibernate 配置文件  （ hibernate.cfg.xml ）
+4. 通过 Hibernate API 编写访问数据库的代码
+
+![][2]
+
+## 使用 Hibernate 的例子
+
+Hibernate 需要如下几个 jar 包：
+
+```
+antlr-2.7.7
+dom4j-1.6.1
+hibernate-commons-annotations-4.0.5
+hibernate-core-4.3.11
+hibernate-jpa-2.1-api-1.0.0
+jandex-1.1.0
+javassist-3.18.1
+jboss-logging-3.1.3.GA
+jboss-logging-annotations-1.2.0
+jboss-transaction-api_1.2_spec-1.0.0
+mysql-connector-java-5.1.38-bin
+```
+
+使用 Maven 构建的 Java 项目，需要在 pom.xml 中添加如下依赖：
+
+```xml
+        <dependency>
+            <groupId>antlr</groupId>
+            <artifactId>antlr</artifactId>
+            <version>2.7.7</version>
+        </dependency>
+        <dependency>
+            <groupId>dom4j</groupId>
+            <artifactId>dom4j</artifactId>
+            <version>1.6.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate.common</groupId>
+            <artifactId>hibernate-commons-annotations</artifactId>
+            <version>4.0.5.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>4.3.11.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate.javax.persistence</groupId>
+            <artifactId>hibernate-jpa-2.1-api</artifactId>
+            <version>1.0.0.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss</groupId>
+            <artifactId>jandex</artifactId>
+            <version>1.1.0.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.javassist</groupId>
+            <artifactId>javassist</artifactId>
+            <version>3.18.1-GA</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.logging</groupId>
+            <artifactId>jboss-logging</artifactId>
+            <version>3.1.3.GA</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.logging</groupId>
+            <artifactId>jboss-logging-annotations</artifactId>
+            <version>1.2.0.Final</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.spec.javax.transaction</groupId>
+            <artifactId>jboss-transaction-api_1.2_spec</artifactId>
+            <version>1.0.0.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.38</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+        </dependency>
+```
+
+### 1. 创建持久化类
+
+在 MySQL 数据库创建一个 t_user 表，建表语句如下：
+
+```sql
+create table t_user( id int primary key auto_increment, name varchar(20) );
+```
+
+创建一个持久化类 `User.java` ，代码如下：
+
+```java
+public class User {
+    private int id;
+    private String name;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "[User: id=" + id + ", name=" + name + "]";
+    }
+}
+
+```
+
+### 2. 创建 对象-关系 映射文件  （ \*.hbm.xml ）
+
+创建映射文件 `User.hbm.xml`
+
+**注意：该映射文件要与 User 类放在同一个包下。**
+
+**如果使用 Maven 构建的项目，所有的配置文件统一放在 resources 目录下。因为 Maven 默认只会读取 resources 目录下的配置文件。**
+
+![][3]
+
+ `User.hbm.xml`的代码如下：
+ 
+ ```xml
+ <?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.nnngu.entity">
+    <class name="User" table="t_user">
+        <id name="id" type="int" column="id">
+            <generator class="native"/>
+        </id>
+        <property name="name" type="string" column="name"/>
+    </class>
+</hibernate-mapping>
+ ```
+ 
+ ### 3. 创建 Hibernate 配置文件  （ hibernate.cfg.xml ）
+ 
+ 在 resources 目录下创建 `hibernate.cfg.xml` 
+ 
+ ![][4]
+ 
+  `hibernate.cfg.xml` 的代码如下：
+  
+  ```xml
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!-- 1. 配置数据库信息 -->
+        <!-- 方言(连接的数据库类型) -->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql:///hibernate_day01?characterEncoding=utf-8&amp;useUnicode=TRUE&amp;autoReconnect=true</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">1</property>
+
+        <!-- 2. 其他配置 -->
+        <!-- 显示生成的SQL语句 -->
+        <property name="hibernate.show_sql">true</property>
+
+        <!-- 3. 导入映射文件 -->
+        <mapping resource="com.nnngu.entity/User.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>  
+  ```
+  
+  ![][5]
+  
+  ### 4. 通过 Hibernate API 编写访问数据库的代码
+  
+步骤：
+
+1. 获取 Configuration 对象
+2. 获取 SessionFactory 对象
+3. 获取 Session ，打开事务
+4. 用面向对象的方式操作数据库
+5. 提交事务，关闭 Session
+  
+首先创建一个工具类 `HibernateUtils.java`，该工具类的作用：
+
+```
+① 用来获取 Configuration 对象
+② 获取全局唯一的 SessionFactory 
+③ 从全局唯一的 SessionFactory 中打开一个 Session 
+```
+
+`HibernateUtils.java`的代码如下：
+
+```java
+package com.nnngu.dao;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class HibernateUtils {
+
+    // SessionFactory全局只需要有一个就可以了，因为它的创建和销毁需要消耗大量的资源。而且它是线程安全的，可以在多线程的环境下使用它
+    private static SessionFactory sessionFactory;
+
+    static {
+        // 初始化SessionFactory
+        sessionFactory = new Configuration() // 代表配置文件的一个对象
+                .configure() // 读取默认的配置文件(hibernate.cfg.xml)
+                .buildSessionFactory();
+    }
+
+    /**
+     * 获取全局唯一的SessionFactory
+     *
+     * @return
+     */
+    public static SessionFactory getSessionFactory() {
+        return sessionFactory;
+    }
+
+    public static Session openSession() {
+        return sessionFactory.openSession();
+    }
+}
+
+```
+
+然后创建一个 UserDao 类，里面编写代码实现对数据库的操作 (CRUD) 。
+
+```java
+package com.nnngu.dao;
+
+import com.nnngu.entity.User;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import java.util.List;
+
+public class UserDao {
+
+    /**
+     * 增
+     *
+     * @param user
+     */
+    public void save(User user) {
+        Session session = HibernateUtils.openSession();
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction(); // 开启事务
+            session.save(user); // 操作数据库
+            tx.commit(); // 提交事务
+        } catch (RuntimeException e) {
+            tx.rollback(); // 回滚事务
+            throw e;
+        } finally {
+            session.close(); // 关闭session
+        }
+    }
+
+    /**
+     * 删
+     *
+     * @param id
+     */
+    public void delete(int id) {
+        Session session = HibernateUtils.openSession();
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            Object user = session.get(User.class, id); // 先获取到这个对象
+            session.delete(user); // 删除
+            tx.commit();
+        } catch (RuntimeException e) {
+            tx.rollback();
+            throw e;
+        } finally {
+            session.close();
+        }
+    }
+
+    /**
+     * 改
+     *
+     * @param user
+     */
+    public void update(User user) {
+        Session session = HibernateUtils.openSession();
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            session.update(user); // 操作数据库
+            tx.commit();
+        } catch (RuntimeException e) {
+            tx.rollback();
+            throw e;
+        } finally {
+            session.close();
+        }
+    }
+
+    /**
+     * 查，根据id查询
+     *
+     * @param id
+     * @return
+     */
+    public User getById(int id) {
+        Session session = HibernateUtils.openSession();
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            User user = (User) session.get(User.class, id); // 操作数据库
+            tx.commit();
+            return user;
+        } catch (RuntimeException e) {
+            tx.rollback();
+            throw e;
+        } finally {
+            session.close();
+        }
+    }
+
+    /**
+     * 查，查询所有
+     *
+     * @return
+     */
+    public List<User> findAll() {
+        Session session = HibernateUtils.openSession();
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            // 使用HQL语句
+            List<User> list = session.createQuery("from User").list();
+            tx.commit();
+            return list;
+        } catch (RuntimeException e) {
+            tx.rollback();
+            throw e;
+        } finally {
+            session.close();
+        }
+    }
+}
+
+```
+
+## 测试
+
+编写测试类 `UserDaoTest.java`
+
+代码如下：
+
+```java
+package com.nnngu.test;
+
+import com.nnngu.dao.UserDao;
+import com.nnngu.entity.User;
+import org.junit.Test;
+
+import java.util.List;
+
+public class UserDaoTest {
+    private UserDao userDao = new UserDao();
+
+    @Test
+    /**
+     * 增
+     */
+    public void testSave() {
+        User user = new User();
+        user.setName("黄药师");
+        // 保存
+        userDao.save(user);
+    }
+
+    @Test
+    /**
+     * 删
+     */
+    public void testDelete() {
+        userDao.delete(1);
+    }
+
+    @Test
+    /**
+     * 改
+     */
+    public void testUpdate() {
+        // 从数据库中获取一条存在的数据
+        User user = userDao.getById(2);
+        user.setName("东邪");
+        // 更新
+        userDao.update(user);
+    }
+
+    @Test
+    /**
+     * 查，根据id查询
+     */
+    public void testGetById() {
+        User user = userDao.getById(2);
+        System.out.println(user);
+    }
+
+    @Test
+    /**
+     * 查，查询所有
+     */
+    public void testFindAll() {
+        List<User> list = userDao.findAll();
+        for (User user : list) {
+            System.out.println(user);
+        }
+    }
+}
+
+```
+
+测试通过。
+
+
+
+  
+  
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+  [1]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/11/1518364745725.jpg
+  [2]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/12/1518365064510.jpg
+  [3]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/12/1518366538625.jpg
+  [4]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/12/1518367199881.jpg
+  [5]: https://www.github.com/nnngu/FigureBed/raw/master/2018/2/12/1518367449518.jpg

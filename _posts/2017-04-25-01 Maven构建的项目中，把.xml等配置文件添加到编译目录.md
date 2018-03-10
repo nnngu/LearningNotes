@@ -1,0 +1,40 @@
+# 01 Maven构建的项目中，把.xml等配置文件添加到编译目录
+
+Maven构建的项目，默认只会把`src/main/resources`目录下的xml配置文件添加到编译目录。
+
+如果需要把`src/main/java`目录下的xml配置文件也添加到编译目录，需要在`pom.xml`中添加如下配置：
+
+```xml
+<build>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
+    </build>
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
+本文永久更新地址：[https://github.com/nnngu/LearningNotes/blob/master/Maven/01%20Maven%E6%9E%84%E5%BB%BA%E7%9A%84%E9%A1%B9%E7%9B%AE%E4%B8%AD%EF%BC%8C%E6%8A%8A.xml%E7%AD%89%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%B7%BB%E5%8A%A0%E5%88%B0%E7%BC%96%E8%AF%91%E7%9B%AE%E5%BD%95.md](https://github.com/nnngu/LearningNotes/blob/master/Maven/01%20Maven%E6%9E%84%E5%BB%BA%E7%9A%84%E9%A1%B9%E7%9B%AE%E4%B8%AD%EF%BC%8C%E6%8A%8A.xml%E7%AD%89%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%B7%BB%E5%8A%A0%E5%88%B0%E7%BC%96%E8%AF%91%E7%9B%AE%E5%BD%95.md)

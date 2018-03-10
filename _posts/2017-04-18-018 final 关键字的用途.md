@@ -1,0 +1,43 @@
+# 018 final 关键字的用途
+
+## final关键字的含义
+
+`final`在`Java`中是一个保留的关键字，可以声明成员变量、方法、类以及本地变量。一旦你将引用声明作`final`，你将不能改变这个引用了，编译器会检查代码，如果你试图将变量再次初始化的话，编译器会报编译错误。
+
+## final变量
+
+凡是对成员变量或者本地变量(在方法中的或者代码块中的变量称为本地变量)声明为`final`的都叫作`final`变量。`final`变量经常和`static`关键字一起使用，作为常量。`final`变量是只读的。
+
+## final方法
+
+`final`也可以声明方法。方法前面加上`final`关键字，代表这个方法不可以被子类的方法重写。如果你认为一个方法的功能已经足够完整了，在子类中不需要改变的话，你可以声明此方法为`final`。`final`方法比`非final`方法要快，因为在编译的时候已经静态绑定了，不需要在运行时再动态绑定。
+
+## final类
+
+使用`final`来修饰的类叫做`final类`。`final类`通常功能是完整的，它们不能被继承。`Java`中有许多类是`final`的，比如`String`、`Interger`以及其他包装类。
+
+## 使用 final关键字的好处
+
+1. `final`关键字提高了性能。`JVM`和`Java应用`都会缓存`final变量`。
+2. `final变量`可以安全的在多线程环境下进行共享，而不需要额外的同步开销。
+3. 使用`final关键字`，`JVM`会对变量、方法以及类进行优化。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
+本文永久更新地址：[https://github.com/nnngu/LearningNotes/blob/master/Java%20Basis/018%20final%20%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E7%94%A8%E9%80%94.md](https://github.com/nnngu/LearningNotes/blob/master/Java%20Basis/018%20final%20%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E7%94%A8%E9%80%94.md)

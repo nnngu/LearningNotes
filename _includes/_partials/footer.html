@@ -1,0 +1,21 @@
+<div class="copyright" >
+  {% assign current = site.time | date: '%Y' %}
+  {% assign since = site.since | downcase %}
+  &copy; {% if site.since and since != current %} {{ since }} - {% endif %}
+  <span itemprop="copyrightYear">{{ current }}</span>
+  <span class="with-love">
+    <i class="fa fa-{{ site.authoricon }}"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">{{ site.author }}</span>
+</div>
+
+{% if site.copyright %}
+<div class="powered-by">
+  笔记仓库：
+<iframe
+    style="margin-left: 2px; margin-bottom:-5px;"
+    frameborder="0" scrolling="0" width="91px" height="20px"
+    src="https://ghbtns.com/github-btn.html?user=nnngu&repo=LearningNotes&type=star&count=true" >
+</iframe>
+</div>
+{% endif %}
