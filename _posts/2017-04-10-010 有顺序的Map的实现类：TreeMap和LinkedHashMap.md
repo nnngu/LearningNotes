@@ -1,4 +1,7 @@
-# 010 有顺序的Map的实现类：TreeMap和LinkedHashMap
+---
+categories: JavaBasis
+description: Map主要用于存储健值对，根据键得到值，因此不允许键重复，但允许值重复。
+---
 
 笔记仓库：[https://github.com/nnngu/LearningNotes](https://github.com/nnngu/LearningNotes)    
 
