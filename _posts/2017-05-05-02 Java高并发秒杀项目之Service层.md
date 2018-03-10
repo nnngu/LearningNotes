@@ -1,4 +1,7 @@
-# 02 Java高并发秒杀项目之Service层
+---
+categories: nguSeckill
+description: 首先在编写`Service`层代码前，我们应该首先要知道这一层到底是干什么的。
+---
 
 笔记仓库：[https://github.com/nnngu/LearningNotes](https://github.com/nnngu/LearningNotes)    
 
