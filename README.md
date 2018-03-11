@@ -3,9 +3,9 @@
 
 --- 
 
-**本Markdown文件是1.0版（手动维护）** 
+**本Markdown文件是1.0版** 
 
-**2.0版（自动维护）请点击链接：** [https://nnngu.github.io/LearningNotes/](https://nnngu.github.io/LearningNotes/)
+**2.0版请点击链接：** [https://nnngu.github.io/LearningNotes/](https://nnngu.github.io/LearningNotes/)
 
 
 
