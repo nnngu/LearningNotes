@@ -55,6 +55,7 @@
 * [017 Java中的静态代理、JDK动态代理、cglib动态代理](https://github.com/nnngu/LearningNotes/blob/master/Java%20Basis/017%20Java%E4%B8%AD%E7%9A%84%E9%9D%99%E6%80%81%E4%BB%A3%E7%90%86%E3%80%81JDK%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86%E3%80%81cglib%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86.md)
 * [018 final 关键字的用途](https://github.com/nnngu/LearningNotes/blob/master/Java%20Basis/018%20final%20%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E7%94%A8%E9%80%94.md)
 * [019 单例模式的5种写法](https://github.com/nnngu/LearningNotes/blob/master/Java%20Basis/019%20%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F%E7%9A%845%E7%A7%8D%E5%86%99%E6%B3%95.md)
+* [Java实现权限管理的思路](https://github.com/nnngu/LearningNotes/blob/master/_posts/2018-03-20-Java%E5%AE%9E%E7%8E%B0%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E7%9A%84%E6%80%9D%E8%B7%AF.md)
 
 
 
