@@ -52,7 +52,7 @@ public class onLineCount implements HttpSessionListener {
 
 ```xml
 <listener>
-  <listener-class>com.ygj.control.onLineCount</listener-class>
+  <listener-class>com.nnngu.listener.onLineCount</listener-class>
 </listener>
 ```
 
