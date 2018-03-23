@@ -3,7 +3,7 @@
 
 --- 
 
-**本Markdown文件是1.0版** 
+**注意：本Markdown文件是1.0版** 
 
 **2.0版请点击链接：** [https://nnngu.github.io/LearningNotes/](https://nnngu.github.io/LearningNotes/)
 
@@ -152,7 +152,7 @@ React中文文档：[https://doc.react-china.org/docs/hello-world.html](https://
  
  
 
-**本Markdown文件是1.0版** 
+**注意：本Markdown文件是1.0版** 
 
 **2.0版请点击链接：** [https://nnngu.github.io/LearningNotes/](https://nnngu.github.io/LearningNotes/)
  
