@@ -81,6 +81,7 @@
 ## Hibernate
 * [01 Hibernate的配置和使用](https://github.com/nnngu/LearningNotes/blob/master/Hibernate/01%20Hibernate%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8.md)
 * [Hibernate的关联映射](https://github.com/nnngu/LearningNotes/blob/master/_posts/2018-03-23-Hibernate%E7%9A%84%E5%85%B3%E8%81%94%E6%98%A0%E5%B0%84.md)
+* [Hibernate的继承映射](https://github.com/nnngu/LearningNotes/blob/master/_posts/2018-03-23-Hibernate%E7%9A%84%E7%BB%A7%E6%89%BF%E6%98%A0%E5%B0%84.md)
 
 
 ## Spring
