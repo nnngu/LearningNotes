@@ -28,5 +28,50 @@ O(nlog<sub>n</sub>) + O(n<sup>2</sup>)，+ 号前面的表示时间复杂度，+
 
 > [单例模式的5种写法](https://github.com/nnngu/LearningNotes/blob/master/_posts/2017-04-19-019%20%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F%E7%9A%845%E7%A7%8D%E5%86%99%E6%B3%95.md)
 
+## 数组中重复的数字
+
+### 题目描述
+
+在一个长度为 n 的数组里的所有数字都在 0 到 n-1 的范围内。数组中某些数字是重复的，但不知道有几个数字是重复的。也不知道每个数字重复几次。请找出数组中任意一个重复的数字。例如，如果输入长度为 7 的数组 {2, 3, 1, 0, 2, 5, 3}，那么对应的输出是第一个重复的数字 2。
+
+### 解题思路
+
+这种数组元素在 \[0, n-1] 范围内的问题，可以将值为 i 的元素放到第 i 个位置上。
+
+以 (2, 3, 1, 0, 2, 5) 为例，代码的运行过程为：
+
+```
+position-0 : (2,3,1,0,2,5) // 2 <-> 1
+             (1,3,2,0,2,5) // 1 <-> 3
+             (3,1,1,0,2,5) // 3 <-> 0
+             (0,1,1,3,2,5) // already in position
+position-1 : (0,1,1,3,2,5) // already in position
+position-2 : (0,1,1,3,2,5) // nums[i] == nums[nums[i]], exit
+```
+
+遍历到位置 2 时，该位置上的数为 1，但是第 1 个位置上已经有一个 1 的值了，因此可以知道 1 重复。
+
+复杂度：O(n) + O(1)
+
+```java
+public boolean duplicate(int[] nums, int length, int[] duplication) {
+    if (nums == null || length <= 0) return false;
+    for (int i = 0; i < length; i++) {
+        while (nums[i] != i && nums[i] != nums[nums[i]]) {
+            swap(nums, i, nums[i]);
+        }
+        if (nums[i] != i && nums[i] == nums[nums[i]]) {
+            duplication[0] = nums[i];
+            return true;
+        }
+    }
+    return false;
+}
+
+private void swap(int[] nums, int i, int j) {
+    int t = nums[i]; nums[i] = nums[j]; nums[j] = t;
+}
+```
+
 
 
