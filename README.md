@@ -159,6 +159,10 @@ React中文文档：[https://doc.react-china.org/docs/hello-world.html](https://
 ## 排版
 * [中文文案排版指南](https://github.com/nnngu/LearningNotes/blob/master/_posts/2018-03-24-%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%88%E6%8E%92%E7%89%88%E6%8C%87%E5%8D%97.md)
  
+ 
+ ## 剑指 offer
+ * [剑指 offer 题解（Java版）](https://github.com/nnngu/LearningNotes/blob/master/_posts/2018-03-24-%E5%89%91%E6%8C%87%20offer%20%E9%A2%98%E8%A7%A3%EF%BC%88Java%E7%89%88%EF%BC%89.md)
+ 
 
 **注意：本Markdown文件是1.0版** 
 
