@@ -155,6 +155,10 @@ React中文文档：[https://doc.react-china.org/docs/hello-world.html](https://
 ## 诗集
 * [《致橡树》](https://github.com/nnngu/LearningNotes/blob/master/_posts/2018-03-23-%E3%80%8A%E8%87%B4%E6%A9%A1%E6%A0%91%E3%80%8B.md)
  
+ 
+## 排版
+* [中文文案排版指南](https://github.com/nnngu/LearningNotes/blob/master/_posts/2018-03-24-%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%88%E6%8E%92%E7%89%88%E6%8C%87%E5%8D%97.md)
+ 
 
 **注意：本Markdown文件是1.0版** 
 
