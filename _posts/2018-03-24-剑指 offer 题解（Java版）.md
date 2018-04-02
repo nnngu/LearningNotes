@@ -7,7 +7,7 @@ description: 用 Java 语言实现的《剑指 offer 》题解
 
 ---
 
-## 本文的约定
+## 1、本文的约定
 
 ### 变量命名约定
 
@@ -24,11 +24,11 @@ description: 用 Java 语言实现的《剑指 offer 》题解
 
 O(nlog<sub>n</sub>) + O(n<sup>2</sup>)，+ 号前面的表示时间复杂度，+ 号后面的表示空间复杂度。
 
-## 实现单例模式
+## 2、实现单例模式
 
 > [单例模式的5种写法](https://github.com/nnngu/LearningNotes/blob/master/_posts/2017-04-19-019%20%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F%E7%9A%845%E7%A7%8D%E5%86%99%E6%B3%95.md)
 
-## 数组中重复的数字
+## 3、数组中重复的数字
 
 ### 题目描述
 
@@ -73,7 +73,7 @@ private void swap(int[] nums, int i, int j) {
 }
 ```
 
-## 二维数组中的查找
+## 4、二维数组中的查找
 
 ### 题目描述
 
@@ -113,7 +113,7 @@ public boolean Find(int target, int[][] matrix) {
 }
 ```
 
-## 替换空格
+## 5、替换空格
 
 ### 题目描述
 
@@ -155,7 +155,7 @@ public String replaceSpace(StringBuffer str) {
 }
 ```
 
-## 从尾到头打印链表
+## 6、从尾到头打印链表
 
 
 
