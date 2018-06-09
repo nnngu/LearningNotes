@@ -5,6 +5,9 @@ $(document).ready(function () {
   initScrollSpy();
   NexT.utils.needAffix() && initAffix();
   initTOCDimension();
+  
+  // 文章里面的链接从新页面打开
+  $('.post-body p a').attr('target', '_blank');
 
   function initScrollSpy () {
     var tocSelector = '.post-toc';
