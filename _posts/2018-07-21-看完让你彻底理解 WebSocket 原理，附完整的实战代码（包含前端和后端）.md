@@ -199,6 +199,8 @@ ajax轮询 需要服务器有很快的处理速度和资源。long poll 需要�
 
 ## 5、实战代码
 
+[这篇文章内容托管于GitHub](https://github.com/nnngu/LearningNotes/blob/master/_posts/2018-07-21-%E7%9C%8B%E5%AE%8C%E8%AE%A9%E4%BD%A0%E5%BD%BB%E5%BA%95%E7%90%86%E8%A7%A3%20WebSocket%20%E5%8E%9F%E7%90%86%EF%BC%8C%E9%99%84%E5%AE%8C%E6%95%B4%E7%9A%84%E5%AE%9E%E6%88%98%E4%BB%A3%E7%A0%81%EF%BC%88%E5%8C%85%E5%90%AB%E5%89%8D%E7%AB%AF%E5%92%8C%E5%90%8E%E7%AB%AF%EF%BC%89.md)
+
 参考文档：   
 [php socket 文档](http://php.net/manual/zh/ref.sockets.php)      
 [js 的 WebSocket 文档](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket)   
