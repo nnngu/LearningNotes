@@ -199,8 +199,8 @@ ajax轮询 需要服务器有很快的处理速度和资源。long poll 需要�
 
 ## 5、实战代码
 
-前端：[https://github.com/nnngu/WebSocketDemo-js](https://github.com/nnngu/WebSocketDemo-js)      
-后端：[https://github.com/nnngu/WebSocketDemo-php](https://github.com/nnngu/WebSocketDemo-php)  
+前端代码：[https://github.com/nnngu/WebSocketDemo-js](https://github.com/nnngu/WebSocketDemo-js)      
+后端代码：[https://github.com/nnngu/WebSocketDemo-php](https://github.com/nnngu/WebSocketDemo-php)  
 
 运行步骤：
 
