@@ -3,12 +3,6 @@
 
 --- 
 
-**注意：本Markdown文件是1.0版** 
-
-**2.0版请点击链接：** [https://nnngu.github.io/LearningNotes/](https://nnngu.github.io/LearningNotes/)
-
-
-
 ## Algorithm
 * [算法01 七大排序之：冒泡排序和快速排序](https://github.com/nnngu/LearningNotes/blob/master/Algorithm/%E7%AE%97%E6%B3%9501%20%E4%B8%83%E5%A4%A7%E6%8E%92%E5%BA%8F%E4%B9%8B%EF%BC%9A%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E5%92%8C%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F.md)
 * [算法02 七大排序之：直接选择排序和堆排序](https://github.com/nnngu/LearningNotes/blob/master/Algorithm/%E7%AE%97%E6%B3%9502%20%E4%B8%83%E5%A4%A7%E6%8E%92%E5%BA%8F%E4%B9%8B%EF%BC%9A%E7%9B%B4%E6%8E%A5%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E5%92%8C%E5%A0%86%E6%8E%92%E5%BA%8F.md)
@@ -150,10 +144,7 @@ React中文文档：[https://doc.react-china.org/docs/hello-world.html](https://
 * [04 经典Java面试题收集（一）](https://github.com/nnngu/LearningNotes/blob/master/_posts/2018-03-12-%E7%BB%8F%E5%85%B8Java%E9%9D%A2%E8%AF%95%E9%A2%98%E6%94%B6%E9%9B%86.md)
 * [05 经典Java面试题收集（二）](https://github.com/nnngu/LearningNotes/blob/master/_posts/2018-03-13-%E7%BB%8F%E5%85%B8Java%E9%9D%A2%E8%AF%95%E9%A2%98%E6%94%B6%E9%9B%86%EF%BC%88%E4%BA%8C%EF%BC%89.md)
 * [06 经典Java面试题收集（三）](https://github.com/nnngu/LearningNotes/blob/master/_posts/2018-03-14-%E7%BB%8F%E5%85%B8Java%E9%9D%A2%E8%AF%95%E9%A2%98%E6%94%B6%E9%9B%86%EF%BC%88%E4%B8%89%EF%BC%89.md)
-* [某公司(简称SMKJ)面试记录](https://github.com/nnngu/LearningNotes/blob/master/_posts/2018-03-30-%E6%9F%90%E5%85%AC%E5%8F%B8(%E7%AE%80%E7%A7%B0SMKJ)%E9%9D%A2%E8%AF%95%E8%AE%B0%E5%BD%95.md)
-* [某公司(简称ttkj)的一次电话面试](https://github.com/nnngu/LearningNotes/blob/master/_posts/2018-04-03-%E6%9F%90%E5%85%AC%E5%8F%B8(%E7%AE%80%E7%A7%B0ttkj)%E7%9A%84%E4%B8%80%E6%AC%A1%E7%94%B5%E8%AF%9D%E9%9D%A2%E8%AF%95.md)
- 
- 
+
 ## 诗集
 * [《致橡树》](https://github.com/nnngu/LearningNotes/blob/master/_posts/2018-03-23-%E3%80%8A%E8%87%B4%E6%A9%A1%E6%A0%91%E3%80%8B.md)
  
@@ -166,8 +157,5 @@ React中文文档：[https://doc.react-china.org/docs/hello-world.html](https://
  * [剑指 offer 题解（Java版）](https://github.com/nnngu/LearningNotes/blob/master/_posts/2018-03-24-%E5%89%91%E6%8C%87%20offer%20%E9%A2%98%E8%A7%A3%EF%BC%88Java%E7%89%88%EF%BC%89.md)
  
 
-**注意：本Markdown文件是1.0版** 
-
-**2.0版请点击链接：** [https://nnngu.github.io/LearningNotes/](https://nnngu.github.io/LearningNotes/)
  
  
